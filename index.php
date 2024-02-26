@@ -39,16 +39,16 @@
                 <br>Get started today and experience the convenience of modern healthcare scheduling.</p>
 
 
-                <a href="../g_view/home_register.html"><button class="cn">JOIN US</button></a>
+                <button class="cn"><a href="g_view/home_register.php">JOIN US</a></button>
 
-                <form class="form" method="POST">
+                <div class="form">
                     <h2>Login Here</h2>
                     <input type="email" name="email" placeholder="Enter Email Here">
-                    <input type="password" name="password" placeholder="Enter Password Here">
+                    <input type="password" name="passwd" placeholder="Enter Password Here">
                     <button class="btnn"><a href="#">Login</a></button>
 
                     <p class="link">Don't have an account<br>
-                    <a href="#">Sign up </a> here</a></p>
+                    <a href="g_view/home_register.php">Sign up </a> here</a></p>
                     <p class="liw">Log in with</p>
 
                     <div class="icons">
@@ -59,7 +59,7 @@
                         <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
                     </div>
 
-                </form>
+                </div>
                     </div>
                 </div>
         </div>

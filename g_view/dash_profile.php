@@ -23,7 +23,7 @@
             </a>
           </li>
           <li>
-            <a href="../g_view/dash.html">
+            <a href="../g_view/dash.php">
               <i class="fas fa-home"></i>
               <span class="nav-item">Home</span>
             </a>
@@ -35,7 +35,7 @@
             </a>
           </li>
           <li>
-            <a href="../g_view/manageAppointments.html">
+            <a href="../g_view/manageAppointments.php">
               <i class="fas fa-tasks"></i>
               <span class="nav-item">Manage Appointemets</span>
             </a>
@@ -47,13 +47,13 @@
             </a>
           </li>
           <li>
-            <a href="../g_view/dash_help.html" class="help">
+            <a href="../g_view/dash_help.php" class="help">
               <i class="fas fa-question-circle"></i>
               <span class="nav-item">Help</span>
             </a>
           </li>
           <li>
-            <a href="../g_view/home.html" class="logout">
+            <a href="../g_view/home.php" class="logout">
               <i class="fas fa-sign-out-alt"></i>
               <span class="nav-item">Log out</span>
             </a>

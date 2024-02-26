@@ -21,19 +21,19 @@
             </a>
           </li>
           <li>
-            <a href="../g_view/admin.html">
+            <a href="../g_view/admin.php">
               <i class="fas fa-home"></i>
               <span class="nav-item">Home</span>
             </a>
           </li>
           <li>
-            <a href="../g_view/profile.html">
+            <a href="../g_view/profile.php">
               <i class="fas fa-user"></i>
               <span class="nav-item">Profile</span>
             </a>
           </li>
           <li>
-            <a href="../g_view/appointmentList.html">
+            <a href="../g_view/appointmentList.php">
               <i class="fas fa-tasks"></i>
               <span class="nav-item">Appointment List</span>
             </a>
@@ -51,7 +51,7 @@
             </a>
           </li>
           <li>
-            <a href="../g_view/home.html" class="logout">
+            <a href="../g_view/home.php" class="logout">
               <i class="fas fa-sign-out-alt"></i>
               <span class="nav-item">Log out</span>
             </a>

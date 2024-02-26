@@ -21,19 +21,19 @@
             </a>
           </li>
           <li>
-            <a href="../g_view/dash.html">
+            <a href="../g_view/dash.php">
               <i class="fas fa-home"></i>
               <span class="nav-item">Home</span>
             </a>
           </li>
           <li>
-            <a href="../g_view/dash_profile.html">
+            <a href="../g_view/dash_profile.php">
               <i class="fas fa-user"></i>
               <span class="nav-item">Profile</span>
             </a>
           </li>
           <li>
-            <a href="../g_view/manageAppointments.html">
+            <a href="../g_view/manageAppointments.php">
               <i class="fas fa-tasks"></i>
               <span class="nav-item">Manage Appointments</span>
             </a>

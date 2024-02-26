@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
     <link rel="stylesheet" href="../g_css/dash_style.css" />
+    <link rel="stylesheet" href="../g_css/admin_style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -21,19 +22,19 @@
             </a>
           </li>
           <li>
-            <a href="../g_view/admin.html">
+            <a href="#">
               <i class="fas fa-home"></i>
               <span class="nav-item">Home</span>
             </a>
           </li>
           <li>
-            <a href="../g_view/profile.html">
+            <a href="../g_view/profile.php">
               <i class="fas fa-user"></i>
               <span class="nav-item">Profile</span>
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="../g_view/appointmentList.php">
               <i class="fas fa-tasks"></i>
               <span class="nav-item">Appointment List</span>
             </a>
@@ -45,13 +46,13 @@
             </a>
           </li>
           <li>
-            <a href="../g_view/admi_help.html" class="help">
+            <a href="../g_view/admi_help.php" class="help">
               <i class="fas fa-question-circle"></i>
               <span class="nav-item">Help</span>
             </a>
           </li>
           <li>
-            <a href="../g_view/home.html" class="logout">
+            <a href="../g_view/home.php" class="logout">
               <i class="fas fa-sign-out-alt"></i>
               <span class="nav-item">Log out</span>
             </a>
@@ -68,65 +69,66 @@
           <h1>Schedule Statistics</h1>
         <div class="main-skills">
           
-          <a href="#" class="card">
+          <a href="managechores.php" class="card">
             <i class="fas fa-clock"></i>
             <h3>Appointments</h3>
             <p>14</p>
           </a>
-          <a href="#" class="card">
+          <a href="managechores.php" class="card">
             <i class="fas fa-exclamation"></i>
             <h3>Cancelled</h3>
             <p>3</p>
           </a>
-          <a href="#" class="card">
+          <a href="managechores.php" class="card">
             <i class="fas fa-check"></i>
             <h3>Completed</h3>
             <p>9</p>
           </a>
         </div>
         <section class="main-task">
-          <h1>Upcoming Appointments</h1>
-          <div class="task-box">
-              <div class="table-container">
-                  <table>
-                      <thead>
-                          <tr>
-                            <th><i class="fas fa-clipboard"></i>Appointment data</th>
-                            <th><i class="fas fa-user"></i>Attendee</th>
-                            <th><i class="fas fa-calendar-day"></i>Case description</th>              
-                            <th><i class="fas fa-clock"></i>Time</th>
-                              
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>12/02/24</td>
-                              <td>Jessica Walters</td>
-                              <td>Mild headache</td>
-                              <td>12:00</td>
-                              <td><button>Edit</button></td>
-                          </tr>
-                          <tr>
-                              <td>23/02/24</td>
-                              <td>Kwame Afriyie</td>
-                              <td>Skin rashes</td>
-                              <td>14:25</td>
-                              <td><button>Edit</button></td>
-                          </tr>
-                          <tr>
-                            <td>23/02/24</td>
-                            <td>Clifford Owusu</td>
-                            <td>Heart burns</td>
-                            <td>15:45</td>
-                            <td><button>Edit</button></td>
-                        </tr>
-                      </tbody>
-                  </table>
-          </div>
-              </div>            
-        </div>
-        </div>
-      </section>
-    </div>
+            <div id="container">
+                <div id="header">
+                  <div id="monthDisplay"></div>
+                  <div>
+                    <button id="backButton">Back</button>
+                    <button id="nextButton">Next</button>
+                  </div>
+                </div>
+          
+                <div id="weekdays">
+                  <div>Sunday</div>
+                  <div>Monday</div>
+                  <div>Tuesday</div>
+                  <div>Wednesday</div>
+                  <div>Thursday</div>
+                  <div>Friday</div>
+                  <div>Saturday</div>
+                </div>
+          
+                <div id="calendar"></div>
+              </div>
+        
+              <div id="newEventModal">
+                <h2>New Event</h2>
+          
+                <input id="eventTitleInput" placeholder="Event Title" />
+          
+                <button id="saveButton">Save</button>
+                <button id="cancelButton">Cancel</button>
+              </div>
+          
+              <div id="deleteEventModal">
+                <h2>Event</h2>
+          
+                <p id="eventText"></p>
+          
+                <button id="deleteButton">Delete</button>
+                <button id="closeButton">Close</button>
+              </div>
+          
+              <div id="modalBackDrop"></div>
+        </section>
+
+    <script src="../g_js/admin_script.js"></script>
   </body>
 </html>
