@@ -48,7 +48,7 @@
                     <button class="btnn"><a href="#">Login</a></button>
 
                     <p class="link">Don't have an account<br>
-                    <a href="#">Sign up </a> here</a></p>
+                    <a href="home_register.php">Sign up </a> here</a></p>
                     <p class="liw">Log in with</p>
 
                     <div class="icons">

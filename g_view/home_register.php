@@ -10,10 +10,10 @@
 
     <div class="main">
         <div class="register" id="register-form">
-            <form class="form" method="POST">
+            <form action="../action/register_action.php" method="POST" class="form">
                 <h2>Register</h2>
-                <input type="text" name="firstname" placeholder="Enter your first name">
-                <input type="text" name="lastname" placeholder="Enter your last name">
+                <input type="text" name="fname" placeholder="Enter your first name">
+                <input type="text" name="lname" placeholder="Enter your last name">
                 
                 <div class="gender">
                     <input type="radio" name="gender" id="male" value="0">
@@ -21,16 +21,25 @@
                     <input type="radio" name="gender" id="female" value="1">
                     <label for="female">Female</label>
                 </div>
+
+                <div class="gender">
+                    <input type="radio" name="role" id="doctor" value="0">
+                    <label for="male">Doctor</label>
+                    <input type="radio" name="role" id="Admin" value="1">
+                    <label for="female">Admin</label>
+                    <input type="radio" name="role" id="patient" value="1">
+                    <label for="female">Patient</label>
+                </div>
                 
                 <input type="text" name="major" placeholder="Enter your major">
-                <input type="text" name="gradclass" placeholder="Enter your class">
+                <input type="text" name="yeargroup" placeholder="Enter your class">
                 <input type="email" name="email" placeholder="Enter Email Here">
                 <input type="password" name="password" placeholder="Enter Password Here">
                 <input type="password" name="confirmpassword" placeholder="Retype your password">
                 <button class="btnn"><a href="#">Register</a></button>
             
                 <p class="link">Already have an account?<br>
-                <a href="#">Sign in</a> here</p>
+                <a href="home.php">Sign in</a> here</p>
                 <p class="liw">Register with</p>
             
                 <div class="icons">

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 17, 2024 at 11:01 PM
+-- Generation Time: Mar 04, 2024 at 08:11 PM
 -- Server version: 10.4.18-MariaDB
 -- PHP Version: 8.0.3
 
@@ -149,6 +149,15 @@ CREATE TABLE `roles` (
   `roleName` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
+--
+-- Dumping data for table `roles`
+--
+
+INSERT INTO `roles` (`roleID`, `roleName`) VALUES
+(0, 'doctor'),
+(1, 'Admin'),
+(2, 'patient');
+
 -- --------------------------------------------------------
 
 --
@@ -170,10 +179,14 @@ CREATE TABLE `speciality` (
 CREATE TABLE `user` (
   `UserID` int(11) NOT NULL,
   `roleID` int(11) NOT NULL,
-  `Username` varchar(50) NOT NULL,
   `tel` varchar(20) NOT NULL,
   `email` varchar(50) NOT NULL,
-  `passwd` varchar(255) NOT NULL
+  `passwd` varchar(255) NOT NULL,
+  `fname` varchar(50) DEFAULT NULL,
+  `lname` varchar(50) DEFAULT NULL,
+  `yeargroup` varchar(50) DEFAULT NULL,
+  `major` varchar(50) DEFAULT NULL,
+  `gender` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
