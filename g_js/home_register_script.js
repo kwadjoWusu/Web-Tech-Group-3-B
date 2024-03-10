@@ -1,72 +1,78 @@
 document.addEventListener("DOMContentLoaded", function() {
     const form = document.querySelector('.form');
-    const firstNameInput = document.querySelector('input[name="firstname"]');
-    const lastNameInput = document.querySelector('input[name="lastname"]');
-    const genderInputs = document.querySelectorAll('input[name="gender"]');
-    const majorInput = document.querySelector('select[name="major"]');
-    const gradClassInput = document.querySelector('input[name="gradclass"]');
+    const firstNameInput = document.querySelector('input[name="fname"]');
+    const lastNameInput = document.querySelector('input[name="lname"]');
+    const genderSelect = document.querySelector('select[name="gender"]');
+    const roleSelect = document.querySelector('select[name="role"]');
+    const majorSelect = document.querySelector('select[name="major"]');
+    const yearGroupSelect = document.querySelector('select[name="yeargroup"]');
+    const telephoneInput = document.querySelector('input[name="telephone"]');
     const emailInput = document.querySelector('input[name="email"]');
     const passwordInput = document.querySelector('input[name="password"]');
-    const confirmPasswordInput = document.querySelector('input[name="confirmpassword"]');
+    const confirmPasswordInput = document.querySelector('input[name="confirmPassword"]'); // Add this line
 
     const passwordRegex = /^(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[A-Z]).{8,}$/;
     const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
 
     form.addEventListener('submit', function(event) {
-        event.preventDefault(); // Prevent form submission for now
-
-        // Validation flag
+        event.preventDefault();
         let valid = true;
 
-        // Check if first name is not empty
+        
         if (firstNameInput.value.trim() === '') {
             alert('Please enter your first name.');
             valid = false;
         }
 
-        // Check if last name is not empty
         if (lastNameInput.value.trim() === '') {
             alert('Please enter your last name.');
             valid = false;
+         
         }
 
-        // Check if gender is selected
-        let genderSelected = false;
-        genderInputs.forEach(function(input) {
-            if (input.checked) {
-                genderSelected = true;
-            }
-        });
-        if (!genderSelected) {
+        if (genderSelect.value === '') {
             alert('Please select your gender.');
             valid = false;
+          
         }
 
-        // Check if major is selected
-        if (majorInput.value === '') {
+        if (roleSelect.value === '') {        
+            alert('Please select your role.');
+            valid = false;
+         
+        }
+
+        if (majorSelect.value === '') {
             alert('Please select your major.');
             valid = false;
+           
         }
 
-        // Check if graduation class is not empty
-        if (gradClassInput.value.trim() === '') {
-            alert('Please enter your graduation class.');
+        if (yearGroupSelect.value === '') {
+   
+            alert('Please select your year group.');
             valid = false;
+        
         }
 
-        // Check if email is valid
+        if (telephoneInput.value.trim() === '') {
+            alert('Please enter your telephone number.');
+            valid = false;
+        
+        }
+
         if (!emailRegex.test(emailInput.value)) {
+
             alert('Please enter a valid email address.');
             valid = false;
+
         }
 
-        // Check if password meets requirements and matches confirm password
         if (!passwordRegex.test(passwordInput.value) || passwordInput.value !== confirmPasswordInput.value) {
             alert('Please make sure your password meets the requirements and matches the confirm password.');
             valid = false;
         }
-
-        // Return the value of valid
+    
         return valid;
     });
 });

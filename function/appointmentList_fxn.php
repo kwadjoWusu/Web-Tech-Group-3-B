@@ -51,8 +51,8 @@ if ($appointments) {
         echo '<tr>'.
              '<td>'.$appointment["appointment_date"].'</td>'.
              '<td>'.$appointment["parient_id"].'</td>'.
-             '<td>'.$appointment["problemDescription"].'</td>'.
-             '<td>'.$appointment["appointment_time"].'</td>'.
+             '<td>'.$appointment["reasonforvisit"].'</td>'.
+             '<td>'.$appointment["set_time"].'</td>'.
              '<td class="action-buttons">'.
              '<button style="color: black;" onclick="cancelappointment('.$appointment["appointment_id"].')"><i class="fas fa-trash-alt" style="color: purple;"></i>Delete</button>'.
              '</td>'.
