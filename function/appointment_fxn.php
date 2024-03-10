@@ -1,5 +1,5 @@
 <?php
-include '../actions/get_all_appointments.php';
+include '../action/get_all_appointments.php';
 
 // Execute the function to get all chores
 $appointments = getAllappointment();
@@ -43,8 +43,8 @@ if ($appointments) {
     echo '<table>'.
          '<tr>'.
          '<th>appointment ID</th>'.
-         '<th>appoitment date</th>'.
-         '<th>appointment time</th>'.
+         '<th>Set date</th>'.
+         '<th>Set time</th>'.
          '<th>reaason for visit</th>'.
          '</tr>';
     foreach ($appointments as $appointment) {
@@ -62,6 +62,12 @@ if ($appointments) {
 
         echo '</table>';
 } else {
-    echo 'No appointments found.';
+     echo '<table>'.
+     '<tr>'.
+     '<th>appointment ID</th>'.
+     '<th>Set date</th>'.
+     '<th>Set time</th>'.
+     '<th>reason for visit</th>'.
+     '</tr>';
 }
 ?>
