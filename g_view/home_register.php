@@ -66,12 +66,12 @@
                 </div>
 
                 <div>
-                <button class="btnn" type="submit" >Register </button>
+                <button class="btnn" type="submit" name = "submit" >Register </button>
                 </div>
 
                 <p class="link">Already have an account?<br>
                 <a href="home.php">Sign in</a> here</p>
-                <p class="liw">Register with</p>
+                <p class="register">Register with</p>
             
                 <div class="icons">
                     <a href="#"><ion-icon name="logo-facebook"></ion-icon></a>

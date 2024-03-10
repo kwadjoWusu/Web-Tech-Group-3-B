@@ -46,6 +46,7 @@ if ($appointments) {
          '<th>Set date</th>'.
          '<th>Set time</th>'.
          '<th>reaason for visit</th>'.
+         '<th>Action</th>'.
          '</tr>';
     foreach ($appointments as $appointment) {
         echo '<tr>'.
