@@ -62,28 +62,27 @@
 
       
       <section class="main">
-        <div class="main-top">
-          <h1>DASHBOARD</h1>
+      <div class="main-top">
+            <h1>DASHBOARD</h1>
             <i class="fas fa-user-cog"></i>
         </div>
-          <h1>Schedule Statistics</h1>
+        <h1>Schedule Statistics</h1>
         <div class="main-skills">
-          
-          <a href="managechores.php" class="card">
-            <i class="fas fa-clock"></i>
-            <h3>Appointments</h3>
-            <p>14</p>
-          </a>
-          <a href="managechores.php" class="card">
-            <i class="fas fa-exclamation"></i>
-            <h3>Cancelled</h3>
-            <p>3</p>
-          </a>
-          <a href="managechores.php" class="card">
-            <i class="fas fa-check"></i>
-            <h3>Completed</h3>
-            <p>9</p>
-          </a>
+            <a href="managechores.php" class="card">
+                <i class="fas fa-clock"></i>
+                <h3>Appointments</h3>
+                <p id="totalAppointments">0</p>
+            </a>
+            <a href="managechores.php" class="card">
+                <i class="fas fa-exclamation"></i>
+                <h3>Cancelled</h3>
+                <p id="cancelledAppointments">0</p>
+            </a>
+            <a href="managechores.php" class="card">
+                <i class="fas fa-check"></i>
+                <h3>Completed</h3>
+                <p id="completedAppointments">0</p>
+            </a>
         </div>
         <section class="main-task">
             <div id="container">
@@ -130,5 +129,17 @@
         </section>
 
     <script src="../g_js/admin_script.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function() {
+          fetch('fetchAppointmentStats.php')
+          .then(response => response.json())
+          .then(data => {
+              document.getElementById("totalAppointments").innerText = data.totalAppointments;
+              document.getElementById("cancelledAppointments").innerText = data.cancelledAppointments;
+              document.getElementById("completedAppointments").innerText = data.completedAppointments;
+          })
+          .catch(error => console.error('Error fetching appointment stats:', error));
+      });
+    </script>
   </body>
 </html>

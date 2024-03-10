@@ -1,6 +1,3 @@
-<?php include('../action/fetchAppointments.php'); ?>
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -62,7 +59,7 @@
   <section class="main">
     <section class="create-appointment">
       <h2>Book a New Slot</h2>
-      <form id="bookSlotForm" action="../action/manageAppointments_action.php" method = "post">
+      <form id="bookSlotForm" onsubmit="return false;">
         <label for="problemDescription">Problem Description:</label>
         <textarea id="problemDescription" name="problemDescription" placeholder="Enter problem description" required></textarea>
 
@@ -72,7 +69,7 @@
         <label for="setDate">Set Date:</label>
         <input type="date" id="setDate" name="setDate" required>
 
-        <button type="submit" name ="submit" id = "submit">Book Slot</button>
+        <button type="submit">Book Slot</button>
       </form>
     </section>
 
@@ -85,24 +82,12 @@
           <th>Action</th>
         </tr>
       </thead>
-      <tbody id="appointmentContainer">
-    <?php foreach ($appointments as $appointment): ?>
-    <tr>
-        <td><?php echo htmlspecialchars($appointment['problemDescription']); ?></td>
-        <td><?php echo htmlspecialchars($appointment['appointment_time']); ?></td>
-        <td><?php echo htmlspecialchars($appointment['appointment_date']); ?></td>
-        <td>
-            <!-- Example action button -->
-            <button onclick="alert('Functionality to be implemented');">Action</button>
-        </td>
-    </tr>
-    <?php endforeach; ?>
-</tbody>
+      <tbody id="appointmentContainer"></tbody>
     </table>
   </section>
 </div>
 
-<!-- <script>
+<script>
   document.getElementById("bookSlotForm").addEventListener("submit", function(event) {
     event.preventDefault();
 
@@ -142,49 +127,10 @@
     document.getElementById("setTime").value = "";
     document.getElementById("setDate").value = "";
   });
-</script> -->
+</script>
 
-<!-- <script>
+<script>
 document.addEventListener("DOMContentLoaded", function() {
-
-  const bookSlotForm = document.getElementById("bookSlotForm");
-  bookSlotForm.addEventListener("submit", function(event) {
-    event.preventDefault();
-
-    // Collecting form data
-    const formData = new FormData(bookSlotForm);
-
-    // Making an AJAX request to submitAppointment.php
-    fetch('../action/manageAppointments_action.php', {
-      method: 'POST',
-      body: formData
-    })
-    .then(response => {
-      if (!response.ok) throw new Error('Network response was not OK');
-      return response.json();
-    })
-    .then(data => {
-      console.log("Success:", data);
-      // Handle success (e.g., showing a success message)
-      // Optionally, fetch appointments again to refresh the list
-      fetchAppointments();
-    })
-    .catch((error) => {
-      console.error('Error:', error);
-      // Handle errors (e.g., showing an error message)
-    });
-
-    // Clearing form fields
-    document.getElementById("problemDescription").value = "";
-    document.getElementById("setTime").value = "";
-    document.getElementById("setDate").value = "";
-  });
-
-
-
-
-
-
   fetchAppointments();
 
   function fetchAppointments() {
@@ -208,7 +154,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <td>${appointment.appointment_date}</td>
             <td><button onclick="deleteAppointment(this)">Delete</button></td> <!-- Adjusted for simplicity -->
           `;
-<!--           
+          
           appointmentContainer.appendChild(row);
         });
       })
@@ -225,7 +171,7 @@ document.addEventListener("DOMContentLoaded", function() {
     
   }
 });
-</script> --> 
+</script>
 
 
 
