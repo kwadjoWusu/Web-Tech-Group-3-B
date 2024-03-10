@@ -22,16 +22,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $RoleRow = $RoleResult->fetch_assoc();
         $roleID = $RoleRow["roleID"];
 
-        $roleQuery = "SELECT roleID FROM roles WHERE roleID ='$role'";
-        $roleResult = $conn->query($roleQuery);
-
-
-        if ($roleResult === FALSE) {
-            echo "Error: " . $roleQuery . "<br>" . $conn->error;
-        } elseif ($roleResult->num_rows > 0) {
-            $roleRow = $roleResult->fetch_assoc();
-            $roleID = $roleRow["roleID"];
-
 
         $sql = "INSERT INTO user (fname, lname, gender, major, yeargroup, email, passwd) 
             VALUES ('$fname', '$lname', '$gender', '$major', '$yeargroup', '$email', '$password')";
@@ -53,10 +43,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         echo "Error: Role not found.";
         echo "Error: " . $roleQuery . "<br>" . $conn->error;
     }
-} else {
-    echo "Error:  role not found.";
-    echo "Error: " . $roleQuery . "<br>" . $conn->error;
-}
 }
 
 $conn->close();
