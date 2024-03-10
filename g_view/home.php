@@ -17,10 +17,8 @@
             <div class="menu">
                 <ul>
                     <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">SERVICE</a></li>
-                    <li><a href="#">DESIGN</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="../about.php">ABOUT</a></li>
+                    <li><a href="../contact.php">CONTACT</a></li>
                 </ul>
             </div>
 

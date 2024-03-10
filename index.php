@@ -2,10 +2,10 @@
 <html lang="en">
 <head>
     <title>HealthLine</title>
-    <link rel="stylesheet" href="../g_css/home_style.css">
+    <link rel="stylesheet" href="./g_css/home_style.css">
 </head>
 <body>
-    <div class="pictures"> <img src="../g_img/bbg_2.jpeg" alt="Doctor 1" width="100%" height="100%"></div>
+    <div class="pictures"> <img src="./g_img/bbg_2.jpeg" alt="Doctor 1" width="100%" height="100%"></div>
     <div class="overlay"></div>
 
     <div class="main">
@@ -17,10 +17,8 @@
             <div class="menu">
                 <ul>
                     <li><a href="#">HOME</a></li>
-                    <li><a href="#">ABOUT</a></li>
-                    <li><a href="#">SERVICE</a></li>
-                    <li><a href="#">DESIGN</a></li>
-                    <li><a href="#">CONTACT</a></li>
+                    <li><a href="./about.php">ABOUT</a></li>
+                    <li><a href="./contact.php">CONTACT</a></li>
                 </ul>
             </div>
 
