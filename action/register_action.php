@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $major = $_POST["major"];
     $yeargroup = $_POST["yeargroup"];
     $email = $_POST["email"];
-    $password = password_hash($_POST["passwd"], PASSWORD_DEFAULT);
+    $password = password_hash($_POST["password"], PASSWORD_DEFAULT);
 
 
     $RoleQuery = "SELECT roleID FROM roles WHERE roleID = '$role'";
@@ -23,8 +23,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $roleID = $RoleRow["roleID"];
 
 
-        $sql = "INSERT INTO user (fname, lname, gender, major, yeargroup, email, passwd) 
-            VALUES ('$fname', '$lname', '$gender', '$major', '$yeargroup', '$email', '$password')";
+        $sql = "INSERT INTO user (fname, lname, gender, major, yeargroup, email, passwd,roleID,tel) 
+            VALUES ('$fname', '$lname', '$gender', '$major', '$yeargroup', '$email', '$password','$roleID','$roleID')";
         if ($conn->query($sql) === TRUE) {
 
             if ($roleID == 0 || $roleID == 1) {
@@ -47,4 +47,3 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
 $conn->close();
             
-
