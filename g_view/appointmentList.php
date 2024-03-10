@@ -122,6 +122,7 @@
                         </tr>
                       </tbody>
                   </table>
+                <?php include '..../function/appointment_fxn.php';?>
           </div>
               </div>            
         </div>
