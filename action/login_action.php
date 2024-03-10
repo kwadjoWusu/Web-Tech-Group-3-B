@@ -9,7 +9,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = mysqli_real_escape_string($conn, $email);
     $password = mysqli_real_escape_string($conn, $password);
 
-    echo 'one';
+    echo 'one'; 
     $sql = "SELECT * FROM user WHERE email = '$email'";
     $result = $conn->query($sql);
 
