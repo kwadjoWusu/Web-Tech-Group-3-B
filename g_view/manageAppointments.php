@@ -75,12 +75,7 @@
 
     <table id="appointmentTable">
       <thead>
-        <tr>
-          <th>Problem Description</th>
-          <th>Set Time</th>
-          <th>Set Date</th>
-          <th>Action</th>
-        </tr>
+        <?php include '../function/appointment_fxn.php';?>
       </thead>
       <tbody id="appointmentContainer"></tbody>
     </table>
@@ -177,3 +172,4 @@
 
 </body>
 </html>
+
