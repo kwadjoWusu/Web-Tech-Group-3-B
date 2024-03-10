@@ -15,7 +15,7 @@
       <nav>
         <ul>
           <li>
-            <a href="#" class="logo">
+            <a href="home.php" class="logo">
               <img src="../g_img/bbg_logo.jpeg" alt="" />
               <span id="name" class="nav-item">HealthLine</span>
             </a>

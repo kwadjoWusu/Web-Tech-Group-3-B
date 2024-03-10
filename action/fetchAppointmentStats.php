@@ -1,29 +1,32 @@
 <?php
-// Assuming '../../settings/conection.php' connects to your database
-require_once('../../settings/conection.php');
+// Including the database connection file
+require_once('../settings/connection.php');
 
-$stats = [
-    'totalAppointments' => 0,
-    'cancelledAppointments' => 0,
-    'completedAppointments' => 0,
-];
+// Initialize variables to store the counts
+$totalAppointments = 0;
+$cancelledAppointments = 0;
+$completedAppointments = 0;
 
-$result = $conn->query("SELECT COUNT(*) AS total FROM appointment");
-if ($row = $result->fetch_assoc()) {
-    $stats['totalAppointments'] = $row['total'];
+// Query to count all appointments
+$queryTotal = "SELECT COUNT(*) AS total FROM appointment";
+$resultTotal = $conn->query($queryTotal);
+if ($row = $resultTotal->fetch_assoc()) {
+    $totalAppointments = $row['total'];
 }
 
-$result = $conn->query("SELECT COUNT(*) AS cancelled FROM appointment WHERE status='Cancelled'");
-if ($row = $result->fetch_assoc()) {
-    $stats['cancelledAppointments'] = $row['cancelled'];
-}
+// // Query to count cancelled appointments
+// $queryCancelled = "SELECT COUNT(*) AS cancelled FROM appointment WHERE status = 'Cancelled'";
+// $resultCancelled = $conn->query($queryCancelled);
+// if ($row = $resultCancelled->fetch_assoc()) {
+//     $cancelledAppointments = $row['cancelled'];
+// }
 
-$result = $conn->query("SELECT COUNT(*) AS completed FROM appointment WHERE status='Completed'");
-if ($row = $result->fetch_assoc()) {
-    $stats['completedAppointments'] = $row['completed'];
-}
+// // Query to count completed appointments
+// $queryCompleted = "SELECT COUNT(*) AS completed FROM appointment WHERE status = 'Completed'";
+// $resultCompleted = $conn->query($queryCompleted);
+// if ($row = $resultCompleted->fetch_assoc()) {
+//     $completedAppointments = $row['completed'];
+// }
 
 $conn->close();
-
-echo json_encode($stats);
 ?>

@@ -1,3 +1,5 @@
+<?php include('../action/fetchAppointmentStats.php'); ?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -16,7 +18,7 @@
       <nav>
         <ul>
           <li>
-            <a href="#" class="logo">
+            <a href="home.php" class="logo">
               <img src="../g_img/bbg_logo.jpeg" alt="" />
               <span id="name" class="nav-item">HealthLine</span>
             </a>
@@ -71,17 +73,17 @@
             <a href="managechores.php" class="card">
                 <i class="fas fa-clock"></i>
                 <h3>Appointments</h3>
-                <p id="totalAppointments">0</p>
+                <p id="totalAppointments"><?php echo $totalAppointments; ?></p>
             </a>
             <a href="managechores.php" class="card">
                 <i class="fas fa-exclamation"></i>
                 <h3>Cancelled</h3>
-                <p id="cancelledAppointments">0</p>
+                <p id="cancelledAppointments"><?php echo $cancelledAppointments; ?></p>
             </a>
             <a href="managechores.php" class="card">
                 <i class="fas fa-check"></i>
                 <h3>Completed</h3>
-                <p id="completedAppointments">0</p>
+                <p id="completedAppointments"><?php echo $completedAppointments; ?></p>
             </a>
         </div>
         <section class="main-task">
@@ -129,17 +131,6 @@
         </section>
 
     <script src="../g_js/admin_script.js"></script>
-    <script>
-      document.addEventListener("DOMContentLoaded", function() {
-          fetch('fetchAppointmentStats.php')
-          .then(response => response.json())
-          .then(data => {
-              document.getElementById("totalAppointments").innerText = data.totalAppointments;
-              document.getElementById("cancelledAppointments").innerText = data.cancelledAppointments;
-              document.getElementById("completedAppointments").innerText = data.completedAppointments;
-          })
-          .catch(error => console.error('Error fetching appointment stats:', error));
-      });
-    </script>
+    
   </body>
 </html>

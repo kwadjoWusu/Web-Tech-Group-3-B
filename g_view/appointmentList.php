@@ -1,3 +1,6 @@
+<?php include('../action/fetchAppointmentStats.php'); ?>
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -15,7 +18,7 @@
       <nav>
         <ul>
           <li>
-            <a href="#" class="logo">
+            <a href="home.php" class="logo">
               <img src="../g_img/bbg_logo.jpeg" alt="" />
               <span id="name" class="nav-item">HealthLine</span>
             </a>
@@ -66,63 +69,29 @@
             <i class="fas fa-user-cog"></i>
         </div>
           <h1>Schedule Statistics</h1>
-        <div class="main-skills">
-          
-          <a href="#" class="card">
-            <i class="fas fa-clock"></i>
-            <h3>Appointments</h3>
-            <p>14</p>
-          </a>
-          <a href="#" class="card">
-            <i class="fas fa-exclamation"></i>
-            <h3>Cancelled</h3>
-            <p>3</p>
-          </a>
-          <a href="#" class="card">
-            <i class="fas fa-check"></i>
-            <h3>Completed</h3>
-            <p>9</p>
-          </a>
+          <div class="main-skills">
+            <a href="managechores.php" class="card">
+                <i class="fas fa-clock"></i>
+                <h3>Appointments</h3>
+                <p id="totalAppointments"><?php echo $totalAppointments; ?></p>
+            </a>
+            <a href="managechores.php" class="card">
+                <i class="fas fa-exclamation"></i>
+                <h3>Cancelled</h3>
+                <p id="cancelledAppointments"><?php echo $cancelledAppointments; ?></p>
+            </a>
+            <a href="managechores.php" class="card">
+                <i class="fas fa-check"></i>
+                <h3>Completed</h3>
+                <p id="completedAppointments"><?php echo $completedAppointments; ?></p>
+            </a>
         </div>
         <section class="main-task">
           <h1>Upcoming Appointments</h1>
           <div class="task-box">
               <div class="table-container">
-                  <table>
-                      <thead>
-                          <tr>
-                            <th><i class="fas fa-clipboard"></i>Appointment data</th>
-                            <th><i class="fas fa-user"></i>Attendee</th>
-                            <th><i class="fas fa-calendar-day"></i>Case description</th>              
-                            <th><i class="fas fa-clock"></i>Time</th>
-                              
-                          </tr>
-                      </thead>
-                      <tbody>
-                          <tr>
-                              <td>12/02/24</td>
-                              <td>Jessica Walters</td>
-                              <td>Mild headache</td>
-                              <td>12:00</td>
-                              <td><button>Edit</button></td>
-                          </tr>
-                          <tr>
-                              <td>23/02/24</td>
-                              <td>Kwame Afriyie</td>
-                              <td>Skin rashes</td>
-                              <td>14:25</td>
-                              <td><button>Edit</button></td>
-                          </tr>
-                          <tr>
-                            <td>23/02/24</td>
-                            <td>Clifford Owusu</td>
-                            <td>Heart burns</td>
-                            <td>15:45</td>
-                            <td><button>Edit</button></td>
-                        </tr>
-                      </tbody>
-                  </table>
-                <?php include '..../function/appointment_fxn.php';?>
+                
+                <?php include '../function/appointment_fxn.php';?>
           </div>
               </div>            
         </div>

@@ -15,7 +15,7 @@
   <nav>
     <ul>
       <li>
-        <a href="#" class="logo">
+        <a href="admin.php" class="logo">
           <img src="../g_img/bbg_logo.jpeg" alt="">
           <span id="name" class="nav-item">HealthLine</span>
         </a>
@@ -81,17 +81,7 @@
         <?php include '../function/appointment_fxn.php';?>
       </thead>
       <tbody id="appointmentContainer">
-    <?php foreach ($appointments as $appointment): ?>
-    <tr>
-        <td><?php echo htmlspecialchars($appointment['problemDescription']); ?></td>
-        <td><?php echo htmlspecialchars($appointment['appointment_time']); ?></td>
-        <td><?php echo htmlspecialchars($appointment['appointment_date']); ?></td>
-        <td>
-            <!-- Example action button -->
-            <button onclick="alert('Functionality to be implemented');">Action</button>
-        </td>
-    </tr>
-    <?php endforeach; ?>
+    
 </tbody>
     </table>
   </section>

@@ -28,10 +28,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if ($conn->query($sql) === TRUE) {
 
             if ($roleID == 0 || $roleID == 1) {
-                header("Location: ../g_view/admin.php");
+                header("Location: ../g_view/home_register.php");
                 exit();
             } elseif ($roleID == 2 ) {
-                header("Location: ../view/dash.php");
+                header("Location: ../g_view/home_register.php");
                 exit();
             } else {
                 echo "Invalid role selected.";
