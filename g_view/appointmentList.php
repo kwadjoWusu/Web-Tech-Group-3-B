@@ -6,7 +6,8 @@
     <title>Home</title>
     <link rel="stylesheet" href="../g_css/dash_style.css" />
     <link
-      rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
     />
   </head>
   <body>
@@ -89,13 +90,43 @@
               <div class="table-container">
                   <table>
                       <thead>
-                        <?php include '../function/appointmentlist_fxn.php';?>
-                      </thead>   
+                          <tr>
+                            <th><i class="fas fa-clipboard"></i>Appointment data</th>
+                            <th><i class="fas fa-user"></i>Attendee</th>
+                            <th><i class="fas fa-calendar-day"></i>Case description</th>              
+                            <th><i class="fas fa-clock"></i>Time</th>
+                              
+                          </tr>
+                      </thead>
+                      <tbody>
+                          <tr>
+                              <td>12/02/24</td>
+                              <td>Jessica Walters</td>
+                              <td>Mild headache</td>
+                              <td>12:00</td>
+                              <td><button>Edit</button></td>
+                          </tr>
+                          <tr>
+                              <td>23/02/24</td>
+                              <td>Kwame Afriyie</td>
+                              <td>Skin rashes</td>
+                              <td>14:25</td>
+                              <td><button>Edit</button></td>
+                          </tr>
+                          <tr>
+                            <td>23/02/24</td>
+                            <td>Clifford Owusu</td>
+                            <td>Heart burns</td>
+                            <td>15:45</td>
+                            <td><button>Edit</button></td>
+                        </tr>
+                      </tbody>
                   </table>
-                </div>
-          </div>            
-        </section>
-        
+                <?php include '..../function/appointment_fxn.php';?>
+          </div>
+              </div>            
+        </div>
+        </div>
       </section>
     </div>
   </body>

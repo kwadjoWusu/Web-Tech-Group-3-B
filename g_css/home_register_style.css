@@ -36,7 +36,7 @@ body{
 
 
 .form {
-    width: 250px;
+    width: 400px;
     height: auto;
     background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
     position: absolute;
@@ -50,13 +50,27 @@ body{
 .form h2 {
     width: 220px;
     font-family: sans-serif;
-    text-align: center;
+    text-align: center; /* Center the text horizontally */
     color: #64121f;
     font-size: 22px;
     background-color: #fff;
     border-radius: 10px;
-    margin: 2px;
+    margin: 2px auto; /* Center the h2 horizontally */
     padding: 8px;
+}
+
+.btnn {
+    width: 240px;
+    height: 40px;
+    background: #64121f;
+    border: none;
+    margin-top: 30px;
+    margin: 0 auto; /* Center the button horizontally */
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
 }
 
 .form input, .form textarea {
@@ -93,18 +107,6 @@ body{
     font-family: Arial;
 }
 
-.btnn {
-    width: 240px;
-    height: 40px;
-    background: #64121f;
-    border: none;
-    margin-top: 30px;
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #fff;
-    transition: 0.4s ease;
-}
 
 .btnn:hover {
     background: #fff;
@@ -164,6 +166,39 @@ body{
     padding-top: 7%;
 }
 
+.form select {
+    width: 100%;
+    height: 35px;
+    background: transparent;
+    border: none;
+    border-bottom: 1px solid #64121f; /* Add border color */
+    color: #fff;
+    font-size: 15px;
+    letter-spacing: 1px;
+    margin-top: 10px; /* Adjust margin as needed */
+    font-family: sans-serif;
+}
+
+/* Style the dropdown arrow */
+.form select::-ms-expand {
+    display: none;
+}
+
+.form select option {
+    background-color: rgba(0,0,0,0.8); /* Background color for options */
+    color: #fff;
+}
+
+/* Add spacing between dropdown label and select element */
+.form .gender label, .form .role label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Adjust color of dropdown label */
+.form .gender label, .form .role label {
+    color: #fff;
+}
 
 
 

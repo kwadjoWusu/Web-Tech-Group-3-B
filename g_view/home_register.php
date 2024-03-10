@@ -16,28 +16,59 @@
                 <input type="text" name="lname" placeholder="Enter your last name">
                 
                 <div class="gender">
-                    <input type="radio" name="gender" id="male" value="0">
-                    <label for="male">Male</label>
-                    <input type="radio" name="gender" id="female" value="1">
-                    <label for="female">Female</label>
+                <br><label for="gender">Gender:</label><br>
+                    <select name="gender" id="gender">
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
+                    </select>
                 </div>
+                <div></div>
 
-                <div class="gender">
-                    <input type="radio" name="role" id="doctor" value="0">
-                    <label for="male">Doctor</label>
-                    <input type="radio" name="role" id="Admin" value="1">
-                    <label for="female">Admin</label>
-                    <input type="radio" name="role" id="patient" value="1">
-                    <label for="female">Patient</label>
+
+                <div class="role">
+                <br><label for="role">Role:</label><br>
+                    <select name="role" id="role">
+                        <option value="0">Doctor</option>
+                        <option value="1">Admin</option>
+                        <option value="2">Patient</option>
+                    </select>
+                    <br>
+                </div>
+                <div class="major">
+                <label for="major">Major:</label>
+                <select name="major" id="major">
+                    <option value="computer_science">Computer Science</option>
+                    <option value="business_administration">Business Administration</option>
+                    <option value="mechanical_engineering">Mechanical Engineering</option>
+                    <option value="computer_engineering">Computer Engineering</option>
+                    <option value="electrical_engineering">Electrical Engineering</option>
+                    <option value="mechatronics_engineering">Mechatronics Engineering</option>
+                    </select>
+                </div>
+                <div>
+                <select name="yeargroup">
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                </select>
                 </div>
                 
-                <input type="text" name="major" placeholder="Enter your major">
-                <input type="text" name="yeargroup" placeholder="Enter your class">
+                <div>
+                <input type="text" name="telephone" placeholder="Enter your telephone number">
+                </div>
+                <div>
                 <input type="email" name="email" placeholder="Enter Email Here">
+                </div>
+
+                <div>
                 <input type="password" name="password" placeholder="Enter Password Here">
-                <input type="password" name="confirmpassword" placeholder="Retype your password">
-                <button class="btnn"><a href="#">Register</a></button>
-            
+                </div>
+
+                <div>
+                <button class="btnn" type="submit" >Register </button>
+                </div>
+
                 <p class="link">Already have an account?<br>
                 <a href="home.php">Sign in</a> here</p>
                 <p class="liw">Register with</p>
@@ -50,10 +81,8 @@
                     <a href="#"><ion-icon name="logo-skype"></ion-icon></a>
                 </div>
             </form>
-            
-
         </div>
-    <div>
+    </div>
         
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
