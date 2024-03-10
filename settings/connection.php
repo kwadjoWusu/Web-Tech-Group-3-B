@@ -1,7 +1,7 @@
 <?php      
     $host = "localhost";  
     $user = "root";  
-    $password = '';  
+    $password = 'cs341webtech';  
     $db_name = "natembea";  
       
     $conn = mysqli_connect($host, $user, $password, $db_name);  
