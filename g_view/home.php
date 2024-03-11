@@ -45,6 +45,9 @@
                     <input type="password" name="password" placeholder="Enter Password Here">
                     <button class="btnn"><a href="#">Login</a></button>
 
+                    <p class="link">
+                        <a href="../g_view/home_forgotten_password.php">Forgotten password </a></p>
+
                     <p class="link">Don't have an account<br>
                     <a href="home_register.php">Sign up </a> here</a></p>
                     <p class="liw">Log in with</p>
