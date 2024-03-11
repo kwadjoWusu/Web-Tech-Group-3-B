@@ -10,29 +10,44 @@
 
     <div class="main">
         <div class="register" id="register-form">
-            <form class="form" method="POST">
+            <form action="../action/register_action.php" method="POST" class="form">
                 <h2>Register</h2>
-                <input type="text" name="firstname" placeholder="Enter your first name" required>
-                <input type="text" name="lastname" placeholder="Enter your last name" required>
+                <input type="text" name="fname" placeholder="Enter your first name" required>
+                <input type="text" name="lname" placeholder="Enter your last name" required>
                 
                 <div class="gender">
-                    <input type="radio" name="gender" id="male" value="0" required>
-                    <label for="male">Male</label>
-                    <input type="radio" name="gender" id="female" value="1" required>
-                    <label for="female">Female</label>
+                <br><label for="gender">Gender:</label><br>
+                    <select name="gender" id="gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="0">Male</option>
+                        <option value="1">Female</option>
+                    </select>
                 </div>
-                
-                <select name="major" required>
-                    <option value="">Select your major</option>
-                    <option value="Computer Science">Computer Science</option>
-                    <option value="Computer Engineering">Computer Engineering</option>
-                    <option value="Mechanical Engineering">Mechanical Engineering</option>
-                    <option value="Electrical Engineering">Electrical Engineering</option>
-                    <option value="Economics">Economics</option>
-                    <option value="Management Information Systems">Management Information Systems</option>
-                    <option value="Business Administration">Business Administration</option>
-                    <option value="Mechatronic Engineering">Mechatronic Engineering</option>
-                </select>
+                <div></div>
+
+
+                <div class="role">
+                <br><label for="role">Role:</label><br>
+                    <select name="role" id="role" required>
+                    <option value="">Select Role</option>
+                        <option value="0">Doctor</option>
+                        <option value="1">Admin</option>
+                        <option value="2">Patient</option>
+                    </select>
+                    <br>
+                </div>
+                <div class="major">
+                <label for="major">Major:</label>
+                <select name="major" id="major" required>
+                    <option value="">Select Major</option>
+                    <option value="computer_science">Computer Science</option>
+                    <option value="business_administration">Business Administration</option>
+                    <option value="mechanical_engineering">Mechanical Engineering</option>
+                    <option value="computer_engineering">Computer Engineering</option>
+                    <option value="electrical_engineering">Electrical Engineering</option>
+                    <option value="mechatronics_engineering">Mechatronics Engineering</option>
+                    </select>
+                </div>
 
                 <div>
                 <select name="yeargroup" required>
