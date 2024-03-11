@@ -16,28 +16,13 @@
                 <input type="text" name="lname" placeholder="Enter your last name" required>
                 
                 <div class="gender">
-                <br><label for="gender">Gender:</label><br>
                     <select name="gender" id="gender" required>
                         <option value="">Select Gender</option>
                         <option value="0">Male</option>
                         <option value="1">Female</option>
                     </select>
                 </div>
-                <div></div>
-
-
-                <div class="role">
-                <br><label for="role">Role:</label><br>
-                    <select name="role" id="role" required>
-                    <option value="">Select Role</option>
-                        <option value="0">Doctor</option>
-                        <option value="1">Admin</option>
-                        <option value="2">Patient</option>
-                    </select>
-                    <br>
-                </div>
                 <div class="major">
-                <label for="major">Major:</label>
                 <select name="major" id="major" required>
                     <option value="">Select Major</option>
                     <option value="computer_science">Computer Science</option>
@@ -50,7 +35,7 @@
                 </div>
 
                 <div>
-                <select name="yeargroup" required>
+                <select name="yeargroup" class = "yeargroup" required>
                     <option value="">Select Year Group</option>
                     <option value="2024">2024</option>
                     <option value="2025">2025</option>
@@ -58,7 +43,6 @@
                     <option value="2027">2027</option>
                 </select>
                 </div>
-
 
                 <input type="email" name="email" placeholder="Enter Email Here" required>
                 <input type="password" name="password" placeholder="Enter Password Here" required pattern="^(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[A-Z]).{8,}$">
