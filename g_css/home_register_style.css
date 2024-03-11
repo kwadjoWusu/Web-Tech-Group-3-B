@@ -1,20 +1,20 @@
 *{
     margin: 0;
     padding: 0;
+    font-family: sans-serif; /* Setting default font family */
 }
 
 body{
-    margin: absolute;
     width: 100%;
     height: 100vh;
+    background-color: #fff; /* Changing background color */
 }
 
 .main {
     position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .pictures {
@@ -35,62 +35,15 @@ body{
 }
 
 
-.form {
-    width: 400px;
-    height: auto;
-    background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border-radius: 10px;
-    padding: 25px;
-}
-
 .form h2 {
-    width: 220px;
-    font-family: sans-serif;
-    text-align: center; /* Center the text horizontally */
+    width: 100%;
+    text-align: center;
     color: #64121f;
     font-size: 22px;
     background-color: #fff;
     border-radius: 10px;
-    margin: 2px auto; /* Center the h2 horizontally */
+    margin: 2px;
     padding: 8px;
-}
-
-.btnn {
-    width: 240px;
-    height: 40px;
-    background: #64121f;
-    border: none;
-    margin-top: 30px;
-    margin: 0 auto; /* Center the button horizontally */
-    font-size: 18px;
-    border-radius: 10px;
-    cursor: pointer;
-    color: #fff;
-    transition: 0.4s ease;
-}
-
-.form input, .form textarea {
-    width: 240px;
-    height: 15px;
-    background: transparent;
-    border-bottom: 1px solid #64121f;
-    border-top: none;
-    border-right: none;
-    border-left: none;
-    color: #fff;
-    font-size: 15px;
-    letter-spacing: 1px;
-    margin-top: 30px;
-    font-family: sans-serif;
-}
-
-.form .gender {
-    display: flex;
-    justify-content: space-between;
 }
 
 
@@ -98,29 +51,33 @@ body{
     margin: 10px 5px 0 0;
 }
 
-.form input:focus, .form textarea:focus {
+.form input:focus, .form select:focus {
     outline: none;
 }
 
 ::placeholder {
     color: #fff;
-    font-family: Arial;
 }
 
+.btnn {
+    width: 100%;
+    height: 40px;
+    background: #64121f;
+    border: none;
+    margin-top: 30px;
+    font-size: 18px;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #fff;
+    transition: 0.4s ease;
+}
 
 .btnn:hover {
     background: #fff;
     color: #64121f;
 }
 
-.btnn a {
-    text-decoration: none;
-    color: #000;
-    font-weight: bold;
-}
-
 .form .link {
-    font-family: Arial, Helvetica, sans-serif;
     font-size: 17px;
     padding-top: 20px;
     text-align: center;
@@ -147,58 +104,73 @@ body{
 .icons ion-icon {
     color: #fff;
     font-size: 30px;
-    padding-left: 14px;
+    padding-left: 10px;
     padding-top: 5px;
     transition: 0.3s ease;
+}
+
+.icons{
+    margin-left: 56%;
+    margin-top: -3%;
 }
 
 .icons ion-icon:hover {
     color: #64121f;
 }
 
-.gender{
-    color:#fff;
+.security-question {
+    color: #fff; /* Setting text color to white */
+    margin-top: 20px; /* Adjusting top margin */
+    font-size: 15px; /* Adjusting font size */
 }
 
-
-
-.gender label{
-    padding-top: 7%;
+.form {
+    width: 500px; /* Increase the width of the form */
+    margin: 0 auto; /* Center the form */
+    background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
+    border-radius: 10px;
+    padding: 25px;
+    display: flex; /* Use flexbox for layout */
+    flex-wrap: wrap; /* Allow elements to wrap */
+    justify-content: space-between; /* Distribute items along the main axis */
 }
 
-.form select {
-    width: 100%;
+.form input, .form select {
+    width: calc(50% - 15px); /* Set width for input fields */
     height: 35px;
     background: transparent;
-    border: none;
-    border-bottom: 1px solid #64121f; /* Add border color */
+    border-bottom: 1px solid #64121f;
+    border-top: none;
+    border-right: none;
+    border-left: none;
     color: #fff;
     font-size: 15px;
     letter-spacing: 1px;
-    margin-top: 10px; /* Adjust margin as needed */
-    font-family: sans-serif;
+    margin-top: 20px;
 }
 
-/* Style the dropdown arrow */
-.form select::-ms-expand {
-    display: none;
-}
-
-.form select option {
-    background-color: rgba(0,0,0,0.8); /* Background color for options */
+.form .gender {
+    width: 100%; /* Full width for gender */
+    display: flex;
+    justify-content: space-between;
     color: #fff;
+    margin-top: 20px;
 }
 
-/* Add spacing between dropdown label and select element */
-.form .gender label, .form .role label {
-    display: block;
-    margin-bottom: 5px;
+.form input[type="radio"] {
+    margin: 10px 5px 0 0;
 }
 
-/* Adjust color of dropdown label */
-.form .gender label, .form .role label {
-    color: #fff;
+.form .security-question,
+.form input[type="text"] {
+    width: 100%; /* Full width for security questions and answers */
+    margin-top: 20px;
 }
+
+.form .security-question {
+    width: 100%; /* Full width for security questions */
+}
+
 
 
 
