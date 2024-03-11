@@ -1,11 +1,11 @@
 <?php      
     $host = "localhost";  
     $user = "root";  
-    $password = 'cs341webtech';  
-    $db_name = "Natembea";  
+    $password = '';  
+    $db_name = "natembea";  
       
     $conn = mysqli_connect($host, $user, $password, $db_name);  
     if(mysqli_connect_errno()) {  
-        echo "Error connecting";
         die("Failed to connect with MySQL: ". mysqli_connect_error());  
     }  
+?>
