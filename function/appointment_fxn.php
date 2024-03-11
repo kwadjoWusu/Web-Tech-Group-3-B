@@ -46,14 +46,13 @@ if ($appointments) {
          '<th>Set date</th>'.
          '<th>Set time</th>'.
          '<th>reaason for visit</th>'.
-         '<th>Action</th>'.
          '</tr>';
     foreach ($appointments as $appointment) {
         echo '<tr>'.
              '<td>'.$appointment["appointment_id"].'</td>'.
              '<td>'.$appointment["appointment_date"].'</td>'.
-             '<td>'.$appointment["appointment_time"].'</td>'.
-             '<td>'.$appointment["problemDescription"].'</td>'.
+             '<td>'.$appointment["set_time"].'</td>'.
+             '<td>'.$appointment["reasonforvisit"].'</td>'.
              '<td class="action-buttons">'.
              '<button style="color: black;" onclick="editappointment('.$appointment["appointment_id"].')"><i class="fas fa-edit" style="color: purple;"></i>Edit</button>'.
              '<button style="color: black;" onclick="cancelappointment('.$appointment["appointment_id"].')"><i class="fas fa-trash-alt" style="color: purple;"></i>Delete</button>'.
