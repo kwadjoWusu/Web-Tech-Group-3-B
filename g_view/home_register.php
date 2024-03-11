@@ -34,7 +34,16 @@
                     <option value="Mechatronic Engineering">Mechatronic Engineering</option>
                 </select>
 
-                <input type="number" name="gradclass" placeholder="Enter your class" required min="2000" max="2025">
+                <div>
+                <select name="yeargroup" required>
+                    <option value="">Select Year Group</option>
+                    <option value="2024">2024</option>
+                    <option value="2025">2025</option>
+                    <option value="2026">2026</option>
+                    <option value="2027">2027</option>
+                </select>
+                </div>
+
 
                 <input type="email" name="email" placeholder="Enter Email Here" required>
                 <input type="password" name="password" placeholder="Enter Password Here" required pattern="^(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[A-Z]).{8,}$">
