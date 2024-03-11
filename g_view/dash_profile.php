@@ -74,26 +74,70 @@
                 <div class="profile_table">
                     <table>
                         <tbody>
-                            <tr>
-                                <td>Name</td>
-                                <td>:</td>
-                                <td>Clifford Owusu</td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>:</td>
-                                <td>sad@ashesi.true</td>
-                            </tr>
-                            <tr>
-                                <td>Address</td>
-                                <td>:</td>
-                                <td>Osu, Accra</td>
-                            </tr>
-                            <tr>
-                                <td>Class</td>
-                                <td>:</td>
-                                <td>'25</td>
-                            </tr>
+                          <h1>I am in the body</h1>
+
+                            <?php 
+                          require_once("../settings/connection.php");
+                          session_start();
+                                        
+
+                            function get_user($UserID){
+                              global $conn;
+                              $stmt = $conn->prepare("SELECT fname, lname, email, major, yeargroup FROM user WHERE UserID = ?");
+                              $stmt->bind_param("i", $UserID);
+                              $stmt->execute();
+                              $result = $stmt->get_result();
+                              $stmt->close();
+                              return $result->fetch_assoc();
+                            }
+                                                                
+                            
+                            $UserID = $_SESSION['UserID'];
+                            
+                            $user = get_user($UserID);
+
+                            $conn->close();
+                            
+                            $fname = $user['fname'];
+                            $lname = $user['lname'];
+                            $email = $user['email'];
+                            $major = $user['major'];
+                            $yeargroup = $user['yeargroup'];
+                            
+                            if (!$user){
+                                echo '<div>No user found</div>';
+                                
+                                $fname = '--';
+                                $lname = '--';
+                                $email = '--';
+                                $major = '--';
+                                $yeargroup = '--';
+                            }
+                                echo "<tr>
+                                        <td>Name</td>
+                                        <td>:</td>
+                                        <td>" . $row['fname'] . " " . $row['lname'] . "</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Email</td>
+                                        <td>:</td>
+                                        <td>" . $row['email'] . "</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Major</td>
+                                        <td>:</td>
+                                        <td>" . $row['major'] . "</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Class</td>
+                                        <td>:</td>
+                                        <td>" . $row['yeargroup'] . "</td>
+                                    </tr>";
+                            
+                             $mysqli->close();
+                          
+                            ?>
+
                             
                         </tbody>
                     </table>
