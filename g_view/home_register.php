@@ -53,7 +53,7 @@
                 <button type="submit" class="btnn">Register</button>
             
                 <p class="link">Already have an account?<br>
-                    Sign in<a href="../g_view/home.html"> here</a> </p>
+                    Sign in<a href="../g_view/home.php"> here</a> </p>
                 <p class="liw">OR register with</p>
             
                 <div class="icons">
