@@ -1,3 +1,10 @@
+<?php
+
+include('../action/fetchQuestion.php');
+
+$questions = getAllquestions();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -49,14 +56,14 @@
                 <input type="password" name="confirmpassword" placeholder="Retype your password" required pattern="^(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[A-Z]).{8,}$">
 
                 <!-- Security Questions -->
-                <p class="security-question">What is your mother's maiden name?</p>
-                <input type="text" name="security_answer_1" placeholder="Enter your answer" required>
 
-                <p class="security-question">In what city were you born?</p>
-                <input type="text" name="security_answer_2" placeholder="Enter your answer" required>
-
-                <p class="security-question">What is the name of your first elementary school?</p>
-                <input type="text" name="security_answer_3" placeholder="Enter your answer" required>
+                <?php foreach ($questions as $question): ?>
+                    <div class="security-question-item">
+                        <p class="security-question"><?= htmlspecialchars($question['question']) ?></p>
+                        <input type="hidden" name="question_id[]" value="<?= htmlspecialchars($question['q_id']) ?>">
+                        <input type="text" name="security_answer[]" placeholder="Enter your answer" required>
+                    </div>
+                <?php endforeach; ?>
 
                 <button type="submit" class="btnn">Register</button>
                 <!-- <input type="submit" class="btnn" value="Register"> -->

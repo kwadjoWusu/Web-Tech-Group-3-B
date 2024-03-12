@@ -10,11 +10,11 @@
 
     <div class="main">
         <div class="register" id="register-form">
-            <form class="form" method="POST">
+            <form class="form" method="POST" action="../action/Reset_password.php">
                 <h2>Forgotten Password</h2>
-
-                <input type="password" name="newpassword" placeholder="Enter New Password Here" required pattern="^(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[A-Z]).{8,}$">
-                <input type="password" name="confirmpassword" placeholder="Retype your password" required pattern="^(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[A-Z]).{8,}$">
+                
+                <input type="password" name="newpassword" placeholder="Enter New Password Here" required >
+                <input type="password" name="confirmpassword" placeholder="Retype your password" required>
 
 
                 <button type="submit" class="btnn">Set Password</button>        
