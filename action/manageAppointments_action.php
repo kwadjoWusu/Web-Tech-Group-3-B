@@ -9,8 +9,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $problemDescription = $_POST['problemDescription'] ?? '';
     $setTime = $_POST['setTime'] ?? '';
     $setDate = $_POST['setDate'] ?? '';
+    $status = 1;
     
-    // Step 1: Insert into patient table
+    
     $patientInsertQuery = $conn->prepare("INSERT INTO patient (user_id) VALUES (?)");
     $patientInsertQuery->bind_param("i", $user_id);
     $patientInsertResult = $patientInsertQuery->execute();
@@ -20,8 +21,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $patient_id = $conn->insert_id;
 
         // Step 2: Insert into appointment table using the new patient_id
-        $appointmentInsertQuery = $conn->prepare("INSERT INTO appointment (patient_id, appointment_date, appointment_time, problemDescription) VALUES (?, ?, ?, ?)");
-        $appointmentInsertQuery->bind_param("isss", $patient_id, $setDate, $setTime, $problemDescription);
+        $appointmentInsertQuery = $conn->prepare("INSERT INTO appointment (patient_id, appointment_date, appointment_time, problemDescription, status) VALUES (?, ?, ?, ?,?)");
+        $appointmentInsertQuery->bind_param("isssi", $patient_id, $setDate, $setTime, $problemDescription, $status);
         $appointmentInsertResult = $appointmentInsertQuery->execute();
 
         if ($appointmentInsertResult) {
