@@ -34,8 +34,10 @@ $row = $result->fetch_assoc();
 // Verify password user provided against database record
 if (password_verify($password, $row['passwd'])) {
     // Create a session for user id and role id
-    $_SESSION['user_id'] = $row['UserID']; // Assuming 'pid' is the user id column in the People table
-    $_SESSION['role_id'] = $row['roleID']; // Assuming 'rid' is the role id column in the People table
+    $_SESSION['user_id'] = $row['UserID']; 
+    $_SESSION['role_id'] = $row['roleID']; 
+    $_SESSION['fname'] = $row['fname'];
+    $_SESSION['lname'] = $row['lname'];
 
     // Redirect based on role
     if ($_SESSION['role_id'] == 2) { // Father or Mother

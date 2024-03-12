@@ -102,6 +102,8 @@
                           <?php
                           require_once("../settings/connection.php");
                           session_start();
+                          include "../settings/core.php";
+                          Login_session();
                             
                           $UserID = $_SESSION['user_id'];
 
