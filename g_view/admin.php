@@ -1,5 +1,6 @@
 <?php include('../action/fetchAppointmentStats.php'); ?>
 
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -109,7 +110,7 @@
                 <div id="calendar"></div>
               </div>
         
-              <div id="newEventModal">
+              <!-- <div id="newEventModal">
                 <h2>New Event</h2>
           
                 <input id="eventTitleInput" placeholder="Event Title" />
@@ -127,10 +128,12 @@
                 <button id="closeButton">Close</button>
               </div>
           
-              <div id="modalBackDrop"></div>
+              <div id="modalBackDrop"></div> -->
         </section>
 
     <script src="../g_js/admin_script.js"></script>
     
   </body>
+
+  
 </html>
