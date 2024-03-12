@@ -1,24 +1,28 @@
 let nav = 0;
-let events = [];
+let clicked = null;
+let events = localStorage.getItem('events') ? JSON.parse(localStorage.getItem('events')) : [];
 
 const calendar = document.getElementById('calendar');
-// const backDrop = document.getElementById('modalBackDrop');
+const newEventModal = document.getElementById('newEventModal');
+const deleteEventModal = document.getElementById('deleteEventModal');
+const backDrop = document.getElementById('modalBackDrop');
+const eventTitleInput = document.getElementById('eventTitleInput');
 const weekdays = ['Sunday', 'Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Saturday'];
 
-// Function to fetch appointments from the server and load them into the calendar
-function fetchAppointments() {
-  console.log('Fetching appointments');
-  fetch('../action/fetchBydates.php')
-    .then(response => response.json())
-    .then(data => {
-      
-      events = data;
-      console.log(events);
-      load();
-    })
-    .catch(error => console.error('Error fetching appointments:', error));
+function openModal(date) {
+  clicked = date;
+
+  const eventForDay = events.find(e => e.date === clicked);
+
+  if (eventForDay) {
+    document.getElementById('eventText').innerText = eventForDay.title;
+    deleteEventModal.style.display = 'block';
+  } else {
+    newEventModal.style.display = 'block';
+  }
+
+  backDrop.style.display = 'block';
 }
-fetchAppointments();
 
 function load() {
   const dt = new Date();
@@ -42,7 +46,8 @@ function load() {
   });
   const paddingDays = weekdays.indexOf(dateString.split(', ')[0]);
 
-  document.getElementById('monthDisplay').innerText = `${dt.toLocaleDateString('en-us', { month: 'long' })} ${year}`;
+  document.getElementById('monthDisplay').innerText = 
+    `${dt.toLocaleDateString('en-us', { month: 'long' })} ${year}`;
 
   calendar.innerHTML = '';
 
@@ -50,34 +55,24 @@ function load() {
     const daySquare = document.createElement('div');
     daySquare.classList.add('day');
 
-    const dayString = `${year}-${String(month + 1).padStart(2, '0')}-${String(i - paddingDays).padStart(2, '0')}`;
-
+    const dayString = `${month + 1}/${i - paddingDays}/${year}`;
 
     if (i > paddingDays) {
       daySquare.innerText = i - paddingDays;
-      const eventsForDay = events.filter(e => e.date === dayString);
+      const eventForDay = events.find(e => e.date === dayString);
 
       if (i - paddingDays === day && nav === 0) {
         daySquare.id = 'currentDay';
       }
 
-      eventsForDay.forEach(event => {
+      if (eventForDay) {
         const eventDiv = document.createElement('div');
         eventDiv.classList.add('event');
-    
-        
-    
-        const idDiv = document.createElement('div');
-        idDiv.innerText = `Appointment: ${event.a_id}`;
-        eventDiv.appendChild(idDiv);
-
-        const titleDiv = document.createElement('div');
-        titleDiv.innerText = event.title;
-        eventDiv.appendChild(titleDiv);
-    
+        eventDiv.innerText = eventForDay.title;
         daySquare.appendChild(eventDiv);
-    });
-    
+      }
+
+      daySquare.addEventListener('click', () => openModal(dayString));
     } else {
       daySquare.classList.add('padding');
     }
@@ -86,25 +81,55 @@ function load() {
   }
 }
 
+function closeModal() {
+  eventTitleInput.classList.remove('error');
+  newEventModal.style.display = 'none';
+  deleteEventModal.style.display = 'none';
+  backDrop.style.display = 'none';
+  eventTitleInput.value = '';
+  clicked = null;
+  load();
+}
+
+function saveEvent() {
+  if (eventTitleInput.value) {
+    eventTitleInput.classList.remove('error');
+
+    events.push({
+      date: clicked,
+      title: eventTitleInput.value,
+    });
+
+    localStorage.setItem('events', JSON.stringify(events));
+    closeModal();
+  } else {
+    eventTitleInput.classList.add('error');
+  }
+}
+
+function deleteEvent() {
+  events = events.filter(e => e.date !== clicked);
+  localStorage.setItem('events', JSON.stringify(events));
+  closeModal();
+}
+
 function initButtons() {
   document.getElementById('nextButton').addEventListener('click', () => {
     nav++;
-    console.log(nav);
     load();
-    fetchAppointments();
   });
 
   document.getElementById('backButton').addEventListener('click', () => {
     nav--;
     load();
-    fetchAppointments();
   });
+
+  document.getElementById('saveButton').addEventListener('click', saveEvent);
+  document.getElementById('cancelButton').addEventListener('click', closeModal);
+  document.getElementById('deleteButton').addEventListener('click', deleteEvent);
+  document.getElementById('closeButton').addEventListener('click', closeModal);
 }
 
-document.addEventListener('DOMContentLoaded', function() {
-  // Place your initButtons function call here
-  fetchAppointments()
-  initButtons();
-  
-   // And any other function calls that need to run on page load
-});
+initButtons();
+load();
+

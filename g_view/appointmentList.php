@@ -1,15 +1,4 @@
-<?php include('../action/fetchAppointmentStats.php');
-session_start();
-include "../settings/core.php";
-Login_session();
-  
-$UserID = $_SESSION['user_id'];
-$UserName1 = $_SESSION['fname'];
-$UserName2 = $_SESSION['lname'];
-
-
-
-?>
+<?php include('../action/fetchAppointmentStats.php'); ?>
 
 
 <!DOCTYPE html>
@@ -77,7 +66,7 @@ $UserName2 = $_SESSION['lname'];
       <section class="main">
         <div class="main-top">
           <h1>DASHBOARD</h1>
-          <i class="fas fa-user-cog"><?php echo $UserName1;?> <?php echo $UserName2;?></i>
+            <i class="fas fa-user-cog"></i>
         </div>
           <h1>Schedule Statistics</h1>
           <div class="main-skills">

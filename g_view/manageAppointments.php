@@ -1,6 +1,4 @@
-<?php include('../action/fetchAppointments.php'); 
-?>
-
+<?php include('../action/fetchAppointments.php'); ?>
 
 
 <!DOCTYPE html>
@@ -83,19 +81,136 @@
         <?php include '../function/appointment_fxn.php';?>
       </thead>
       <tbody id="appointmentContainer">
-
-
-
-      
     
 </tbody>
     </table>
   </section>
-
-
-  
 </div>
 
+<!-- <script>
+  document.getElementById("bookSlotForm").addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    var problemDescription = document.getElementById("problemDescription").value;
+    var setTime = document.getElementById("setTime").value;
+    var setDate = document.getElementById("setDate").value;
+
+    var appointmentContainer = document.getElementById("appointmentContainer");
+
+    var appointmentRow = document.createElement("tr");
+
+    var descriptionCell = document.createElement("td");
+    descriptionCell.textContent = problemDescription;
+    appointmentRow.appendChild(descriptionCell);
+
+    var timeCell = document.createElement("td");
+    timeCell.textContent = setTime;
+    appointmentRow.appendChild(timeCell);
+
+    var dateCell = document.createElement("td");
+    dateCell.textContent = setDate;
+    appointmentRow.appendChild(dateCell);
+
+    var deleteCell = document.createElement("td");
+    var deleteButton = document.createElement("button");
+    deleteButton.textContent = "Delete";
+    deleteButton.addEventListener("click", function() {
+      appointmentContainer.removeChild(appointmentRow);
+    });
+    deleteCell.appendChild(deleteButton);
+    appointmentRow.appendChild(deleteCell);
+
+    appointmentContainer.appendChild(appointmentRow);
+
+    
+    document.getElementById("problemDescription").value = "";
+    document.getElementById("setTime").value = "";
+    document.getElementById("setDate").value = "";
+  });
+</script> -->
+
+<!-- <script>
+document.addEventListener("DOMContentLoaded", function() {
+
+  const bookSlotForm = document.getElementById("bookSlotForm");
+  bookSlotForm.addEventListener("submit", function(event) {
+    event.preventDefault();
+
+    // Collecting form data
+    const formData = new FormData(bookSlotForm);
+
+    // Making an AJAX request to submitAppointment.php
+    fetch('../action/manageAppointments_action.php', {
+      method: 'POST',
+      body: formData
+    })
+    .then(response => {
+      if (!response.ok) throw new Error('Network response was not OK');
+      return response.json();
+    })
+    .then(data => {
+      console.log("Success:", data);
+      // Handle success (e.g., showing a success message)
+      // Optionally, fetch appointments again to refresh the list
+      fetchAppointments();
+    })
+    .catch((error) => {
+      console.error('Error:', error);
+      // Handle errors (e.g., showing an error message)
+    });
+
+    // Clearing form fields
+    document.getElementById("problemDescription").value = "";
+    document.getElementById("setTime").value = "";
+    document.getElementById("setDate").value = "";
+  });
+
+
+
+
+
+
+  fetchAppointments();
+
+  function fetchAppointments() {
+    fetch('fetchAppointments.php')
+      .then(response => {
+        if (!response.ok) {
+            throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        const appointmentContainer = document.getElementById("appointmentContainer");
+        appointmentContainer.innerHTML = ''; 
+        
+        data.forEach(appointment => {
+          const row = document.createElement("tr");
+          
+          row.innerHTML = `
+            <td>${appointment.reasonforvisit}</td>
+            <td>${appointment.settime}</td>
+            <td>${appointment.appointment_date}</td>
+            <td><button onclick="deleteAppointment(this)">Delete</button></td> <!-- Adjusted for simplicity -->
+          `;
+<!--           
+          appointmentContainer.appendChild(row);
+        });
+      })
+      .catch(error => {
+        console.error('Error fetching appointments:', error);
+        
+      });
+  }
+
+  // delete functionality
+  window.deleteAppointment = function(button) {
+    
+    console.log("Delete button clicked", button);
+    
+  }
+});
+</script> --> 
 
 
 
