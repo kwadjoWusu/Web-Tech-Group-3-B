@@ -43,7 +43,10 @@
                     <h2>Login Here</h2>
                     <input type="email" name="email" placeholder="Enter Email Here">
                     <input type="password" name="password" placeholder="Enter Password Here">
-                    <button class="btnn"><a href="#">Login</a></button>
+                    <button type="submit" class="btnn"><a href="#">Login</a></button>
+
+                    <p class="link">
+                        <a href="../g_view/home_forgotten_password.php">Forgotten password </a></p>
 
                     <p class="link">Don't have an account<br>
                     <a href="home_register.php">Sign up </a> here</a></p>

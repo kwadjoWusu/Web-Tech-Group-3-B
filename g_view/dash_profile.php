@@ -74,26 +74,68 @@
                 <div class="profile_table">
                     <table>
                         <tbody>
-                            <tr>
-                                <td>Name</td>
-                                <td>:</td>
-                                <td>Clifford Owusu</td>
-                            </tr>
-                            <tr>
-                                <td>Email</td>
-                                <td>:</td>
-                                <td>sad@ashesi.true</td>
-                            </tr>
-                            <tr>
-                                <td>Address</td>
-                                <td>:</td>
-                                <td>Osu, Accra</td>
-                            </tr>
-                            <tr>
-                                <td>Class</td>
-                                <td>:</td>
-                                <td>'25</td>
-                            </tr>
+
+                        <?php
+                          require_once("../settings/connection.php");
+                          session_start();
+                            
+                          $UserID = $_SESSION['user_id'];
+
+                            function get_user($UserID){
+                              global $conn;
+                              $stmt = $conn->prepare("SELECT fname, lname, email, major, yeargroup FROM user WHERE UserID = ?");
+                              $stmt->bind_param("i", $UserID);
+                              $stmt->execute();
+                              $result = $stmt->get_result();
+                              $stmt->close();
+                              return $result->fetch_assoc();
+                            }
+                                                                
+                            require_once("../settings/connection.php");
+                            
+                            $user = get_user($UserID);
+
+                            $conn->close();
+                            
+                            $fname = $user['fname'];
+                            $lname = $user['lname'];
+                            $email = $user['email'];
+                            $major = $user['major'];
+                            $yeargroup = $user['yeargroup'];
+                            
+                            if (!$user){
+                                echo '<div>No user found</div>';
+                                
+                                $fname = '--';
+                                $lname = '--';
+                                $email = '--';
+                                $major = '--';
+                                $yeargroup = '--';
+                            }
+
+                          echo "<tr>
+                              <td>Name</td>
+                              <td>:</td>
+                              <td>" . $fname. " " . $lname. "</td>
+                          </tr>
+                          <tr>
+                              <td>Email</td>
+                              <td>:</td>
+                              <td>" . $email . "</td>
+                          </tr>
+                          <tr>
+                              <td>Major</td>
+                              <td>:</td>
+                              <td>" . $major. "</td>
+                          </tr>
+                          <tr>
+                              <td>Class</td>
+                              <td>:</td>
+                              <td>" . $yeargroup. "</td>
+                          </tr>";
+                            
+                        ?>
+
                             
                         </tbody>
                     </table>
