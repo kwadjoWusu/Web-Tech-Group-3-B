@@ -59,6 +59,7 @@
                 <input type="text" name="security_answer_3" placeholder="Enter your answer" required>
 
                 <button type="submit" class="btnn">Register</button>
+                <!-- <input type="submit" class="btnn" value="Register"> -->
             
                 <p class="link">Already have an account?<br>
                     Sign in<a href="../g_view/home.php"> here</a> </p>
@@ -75,7 +76,7 @@
         </div>
     </div>
 
-    <script src="../g_js/home_register_script.js"></script>
+    <!-- <script src="../g_js/home_register_script.js"></script> -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

@@ -57,6 +57,6 @@ if (password_verify($password, $row['passwd'])) {
 }
 
 // Close the connection
-$conn->close();
-?>
+// $conn->close();
+
 

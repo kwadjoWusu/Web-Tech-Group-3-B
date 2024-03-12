@@ -74,12 +74,12 @@
                 <div class="profile_table">
                     <table>
                         <tbody>
-                          <h1>I am in the body</h1>
 
-                            <?php 
+                        <?php
                           require_once("../settings/connection.php");
                           session_start();
-                                        
+                            
+                          $UserID = $_SESSION['user_id'];
 
                             function get_user($UserID){
                               global $conn;
@@ -91,8 +91,7 @@
                               return $result->fetch_assoc();
                             }
                                                                 
-                            
-                            $UserID = $_SESSION['UserID'];
+                            require_once("../settings/connection.php");
                             
                             $user = get_user($UserID);
 
@@ -113,30 +112,29 @@
                                 $major = '--';
                                 $yeargroup = '--';
                             }
-                                echo "<tr>
-                                        <td>Name</td>
-                                        <td>:</td>
-                                        <td>" . $row['fname'] . " " . $row['lname'] . "</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Email</td>
-                                        <td>:</td>
-                                        <td>" . $row['email'] . "</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Major</td>
-                                        <td>:</td>
-                                        <td>" . $row['major'] . "</td>
-                                    </tr>
-                                    <tr>
-                                        <td>Class</td>
-                                        <td>:</td>
-                                        <td>" . $row['yeargroup'] . "</td>
-                                    </tr>";
+
+                          echo "<tr>
+                              <td>Name</td>
+                              <td>:</td>
+                              <td>" . $fname. " " . $lname. "</td>
+                          </tr>
+                          <tr>
+                              <td>Email</td>
+                              <td>:</td>
+                              <td>" . $email . "</td>
+                          </tr>
+                          <tr>
+                              <td>Major</td>
+                              <td>:</td>
+                              <td>" . $major. "</td>
+                          </tr>
+                          <tr>
+                              <td>Class</td>
+                              <td>:</td>
+                              <td>" . $yeargroup. "</td>
+                          </tr>";
                             
-                             $mysqli->close();
-                          
-                            ?>
+                        ?>
 
                             
                         </tbody>
