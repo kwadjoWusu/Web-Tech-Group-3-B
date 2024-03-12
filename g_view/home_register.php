@@ -1,10 +1,3 @@
-<?php
-
-include('../action/fetchQuestion.php');
-
-$questions = getAllquestions();
-?>
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -56,17 +49,16 @@ $questions = getAllquestions();
                 <input type="password" name="confirmpassword" placeholder="Retype your password" required pattern="^(?=.*[!@#$%^&*])(?=.*[0-9])(?=.*[A-Z]).{8,}$">
 
                 <!-- Security Questions -->
+                <p class="security-question">What is your mother's maiden name?</p>
+                <input type="text" name="security_answer_1" placeholder="Enter your answer" required>
 
-                <?php foreach ($questions as $question): ?>
-                    <div class="security-question-item">
-                        <p class="security-question"><?= htmlspecialchars($question['question']) ?></p>
-                        <input type="hidden" name="question_id[]" value="<?= htmlspecialchars($question['q_id']) ?>">
-                        <input type="text" name="security_answer[]" placeholder="Enter your answer" required>
-                    </div>
-                <?php endforeach; ?>
+                <p class="security-question">In what city were you born?</p>
+                <input type="text" name="security_answer_2" placeholder="Enter your answer" required>
+
+                <p class="security-question">What is the name of your first elementary school?</p>
+                <input type="text" name="security_answer_3" placeholder="Enter your answer" required>
 
                 <button type="submit" class="btnn">Register</button>
-                <!-- <input type="submit" class="btnn" value="Register"> -->
             
                 <p class="link">Already have an account?<br>
                     Sign in<a href="../g_view/home.php"> here</a> </p>
@@ -83,7 +75,7 @@ $questions = getAllquestions();
         </div>
     </div>
 
-    <!-- <script src="../g_js/home_register_script.js"></script> -->
+    <script src="../g_js/home_register_script.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>

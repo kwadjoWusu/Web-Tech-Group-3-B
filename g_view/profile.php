@@ -102,10 +102,7 @@
                           <?php
                           require_once("../settings/connection.php");
                           session_start();
-                          include "../settings/core.php";
-                          Login_session();
-                            
-                          $UserID = $_SESSION['user_id'];
+                                        
 
                             function get_user($UserID){
                               global $conn;
@@ -118,6 +115,8 @@
                             }
                                                                 
                             require_once("../settings/connection.php");
+                            
+                            $UserID = $_SESSION['UserID'];
                             
                             $user = get_user($UserID);
 

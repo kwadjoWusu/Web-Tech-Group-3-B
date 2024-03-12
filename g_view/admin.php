@@ -1,14 +1,4 @@
-<?php include('../action/fetchAppointmentStats.php'); 
-session_start();
-include "../settings/core.php";
-Login_session();
-  
-$UserID = $_SESSION['user_id'];
-$UserName1 = $_SESSION['fname'];
-$UserName2 = $_SESSION['lname'];
-
-?>
-
+<?php include('../action/fetchAppointmentStats.php'); ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -76,7 +66,7 @@ $UserName2 = $_SESSION['lname'];
       <section class="main">
       <div class="main-top">
             <h1>DASHBOARD</h1>
-            <i class="fas fa-user-cog"><?php echo $UserName1;?> <?php echo $UserName2;?></i>
+            <i class="fas fa-user-cog"></i>
         </div>
         <h1>Schedule Statistics</h1>
         <div class="main-skills">
@@ -119,7 +109,7 @@ $UserName2 = $_SESSION['lname'];
                 <div id="calendar"></div>
               </div>
         
-              <!-- <div id="newEventModal">
+              <div id="newEventModal">
                 <h2>New Event</h2>
           
                 <input id="eventTitleInput" placeholder="Event Title" />
@@ -137,12 +127,10 @@ $UserName2 = $_SESSION['lname'];
                 <button id="closeButton">Close</button>
               </div>
           
-              <div id="modalBackDrop"></div> -->
+              <div id="modalBackDrop"></div>
         </section>
 
     <script src="../g_js/admin_script.js"></script>
     
   </body>
-
-  
 </html>
