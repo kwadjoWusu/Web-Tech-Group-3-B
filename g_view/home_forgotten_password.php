@@ -10,10 +10,12 @@
 
     <div class="main">
         <div class="register" id="register-form">
-            <form class="form" method="POST">
+            <form class="form" method="POST" action="../action/question_validate.php">
                 <h2>Forgotten Password</h2>
 
                 <!-- Security Questions -->
+                <p class="security-question">Enter Email</p>
+                <input type="email" name="email" placeholder="Enter your email" required >
                 <p class="security-question">What is your mother's maiden name?</p>
                 <input type="text" name="security_answer_1" placeholder="Enter your answer" required>
 
