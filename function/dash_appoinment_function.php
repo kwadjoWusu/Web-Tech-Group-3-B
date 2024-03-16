@@ -19,7 +19,6 @@ $appointmentsByYear = getDashAllAppointments();
     <?php
     foreach ($appointmentsByYear as $year => $appointments) {
         echo "<section class='main-task'>";
-        echo "<h1>Consultation History</h1>";
         echo "<div class='event-container'>";
         echo "<h3 class='year'>$year</h3>";
 
