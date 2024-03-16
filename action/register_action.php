@@ -18,7 +18,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         die("Error: Mismatch between the number of questions and answers.");
     }
 
-    $roleID = 2;
+    $roleID = 1;
 
     // Check if there is already a user with the same email
     $checkEmailQuery = "SELECT email FROM user WHERE email = ?";

@@ -1,3 +1,5 @@
+
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -39,7 +41,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="settings">
+            <a href="../g_view/home_forgotten_password.php" class="settings">
               <i class="fas fa-cog"></i>
               <span class="nav-item">Change Password</span>
             </a>
