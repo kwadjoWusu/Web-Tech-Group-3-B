@@ -41,7 +41,7 @@
             </a>
           </li>
           <li>
-            <a href="../g_view/home_forgotten_password.php" class="settings">
+            <a href="#" class="settings">
               <i class="fas fa-cog"></i>
               <span class="nav-item">Change Password</span>
             </a>
@@ -66,145 +66,8 @@
         
         <section class="main-task">
           <h1>Consulation History</h1>
-          <div class="event-container">
-            <h3 class="year">2023</h3>
-      
-            <div class="event">
-              <div class="event-left">
-                <div class="event-date">
-                  <div class="date">8</div>
-                  <div class="month">Nov</div>
-                </div>
-              </div>
-      
-              <div class="event-right">
-                <h3 class="event-title">Nose bleed</h3>
-      
-                <div class="event-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus,
-                  ratione.
-                </div>
-      
-                <div class="event-timing">
-                  <img src="images/time.png" alt="" /> 10:00 am
-                </div>
-              </div>
-            </div>
-      
-            <div class="event">
-              <div class="event-left">
-                <div class="event-date">
-                  <div class="date">22</div>
-                  <div class="month">Dec</div>
-                </div>
-              </div>
-      
-              <div class="event-right">
-                <h3 class="event-title">Upset stomach</h3>
-      
-                <div class="event-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus,
-                  ratione.
-                </div>
-      
-                <div class="event-timing">
-                  <img src="images/time.png" alt="" /> 10:45 am
-                </div>
-              </div>
-            </div>
-      
-            <h3 class="year">2022</h3>
-      
-            <div class="event">
-              <div class="event-left">
-                <div class="event-date">
-                  <div class="date">8</div>
-                  <div class="month">Jan</div>
-                </div>
-              </div>
-      
-              <div class="event-right">
-                <h3 class="event-title">Head ache</h3>
-      
-                <div class="event-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus,
-                  ratione.
-                </div>
-      
-                <div class="event-timing">
-                  <img src="images/time.png" alt="" /> 10:00 am
-                </div>
-              </div>
-            </div>
-      
-            <div class="event">
-              <div class="event-left">
-                <div class="event-date">
-                  <div class="date">9</div>
-                  <div class="month">Mar</div>
-                </div>
-              </div>
-      
-              <div class="event-right">
-                <h3 class="event-title">Upset stomach</h3>
-      
-                <div class="event-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus,
-                  ratione.
-                </div>
-      
-                <div class="event-timing">
-                  <img src="images/time.png" alt="" /> 10:30 am
-                </div>
-              </div>
-            </div>
-
-            <h3 class="year">2020</h3>
-      
-            <div class="event">
-              <div class="event-left">
-                <div class="event-date">
-                  <div class="date">4</div>
-                  <div class="month">Apr</div>
-                </div>
-              </div>
-      
-              <div class="event-right">
-                <h3 class="event-title">Skin rashes</h3>
-      
-                <div class="event-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus,
-                  ratione.
-                </div>
-      
-                <div class="event-timing">
-                  <img src="images/time.png" alt="" /> 10:00 am
-                </div>
-              </div>
-            </div>
-      
-            <div class="event">
-              <div class="event-left">
-                <div class="event-date">
-                  <div class="date">8</div>
-                  <div class="month">Jun</div>
-                </div>
-              </div>
-      
-              <div class="event-right">
-                <h3 class="event-title">Back pains</h3>
-      
-                <div class="event-description">
-                  Lorem ipsum dolor, sit amet consectetur adipisicing elit. Accusamus,
-                  ratione.
-                </div>
-      
-                <div class="event-timing">
-                  <img src="images/time.png" alt="" /> 10:00 am
-                </div>
-              </div>
-            </div>
-          </div>
+          <?php include '../function/dash_appointment_function.php';?>
+        </section> 
       </section>
     </div>
     <style>
