@@ -23,7 +23,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if($result) {
         // If the update is successful
         echo "Password updated successfully.";
-        header("Location: ../view/home.php"); 
+        header("Location: ../action/logout.php"); 
         exit();
     } else {
         // If the update fails

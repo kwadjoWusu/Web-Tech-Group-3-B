@@ -1,8 +1,16 @@
 <?php
+// session_start();
 include '../action/get_all_appointments.php';
+$roleID = $_SESSION['role_id'];
+$roleID = $_SESSION['UserID'];
+
 
 // Execute the function to get all chores
 $appointments = getAllappointment();
+
+if ($roleID != 1) {
+     $appointments = getAppointmentById($UserID);
+}
 
 // Display the list of chores in a table format
 if ($appointments) {

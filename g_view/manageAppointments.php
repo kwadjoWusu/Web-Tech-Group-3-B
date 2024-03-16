@@ -35,13 +35,13 @@
         </a>
       </li>
       <li>
-        <a href="#">
+        <a href="manageAppointments.php">
           <i class="fas fa-tasks"></i>
           <span class="nav-item">Manage Appointments</span>
         </a>
       </li>
       <li>
-        <a href="#" class="settings">
+        <a href="../g_view/home_forgotten_password.php" class="settings">
           <i class="fas fa-cog"></i>
           <span class="nav-item">Change Password</span>
         </a>

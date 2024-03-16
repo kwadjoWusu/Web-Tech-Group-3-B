@@ -40,10 +40,10 @@ if (password_verify($password, $row['passwd'])) {
     $_SESSION['lname'] = $row['lname'];
 
     // Redirect based on role
-    if ($_SESSION['role_id'] == 2) { // Father or Mother
+    if ($_SESSION['role_id'] == 2) { 
         header("Location: ../g_view/dash.php");
         exit();
-    } else { // Normal user
+    } else { 
         header("Location: ../g_view/admin.php");
         exit();
     }

@@ -1,3 +1,9 @@
+<?php 
+session_start();
+include "../settings/core.php";
+Login_session();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -29,7 +35,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="profile.php">
               <i class="fas fa-user"></i>
               <span class="nav-item">Profile</span>
             </a>
@@ -41,7 +47,7 @@
             </a>
           </li>
           <li>
-            <a href="#" class="settings">
+            <a href="../g_view/home_forgotten_password.php" class="settings">
               <i class="fas fa-cog"></i>
               <span class="nav-item">Change Password</span>
             </a>
@@ -101,9 +107,7 @@
 
                           <?php
                           require_once("../settings/connection.php");
-                          session_start();
-                          include "../settings/core.php";
-                          Login_session();
+                          
                             
                           $UserID = $_SESSION['user_id'];
 

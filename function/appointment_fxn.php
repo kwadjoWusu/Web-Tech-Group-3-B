@@ -1,8 +1,25 @@
 <?php
 
 include '../action/get_all_appointments.php';
+
+if(!isset($_SESSION)){
+     session_start();
+}
+
+$UserID = $_SESSION['user_id'];
+$roleID = $_SESSION['role_id'];
+
 $appointments = getAllAppointment();
+// $appointmentsById = getAppointmentById($UserID);
 $status = getAllstatus() ;
+
+if ($roleID != 1) {
+     // echo $roleID;
+     $appointments = getAppointmentById($UserID);
+     // print_r($appointments);
+}
+
+
 
 ?>
 
@@ -26,7 +43,10 @@ $status = getAllstatus() ;
         <th>Status</th>
         <th>Action</th>
     </tr>
-    <?php foreach ($appointments as $appointment):
+    <?php 
+    
+    
+    foreach ($appointments as $appointment):
           $k =$status[$appointment["status"]-1];
           $st = $k["status_name"];
             
@@ -45,6 +65,7 @@ $status = getAllstatus() ;
         <button class="status-dropbtn">Change Status</button>
           <div class="status-dropdown-content">
                <?php foreach ($status as $stat): ?>
+                    
                     <a href="#" onclick="changeAppointmentStatus(<?= $appointment['appointment_id'] ?>, '<?= $stat['s_id'] ?>')"><?= $stat['status_name'] ?></a>
           
                <?php endforeach; ?>
@@ -53,6 +74,8 @@ $status = getAllstatus() ;
         </td>
     </tr>
     <?php endforeach; ?>
+    
+     
 </table>
 
 <!-- Edit Modal -->

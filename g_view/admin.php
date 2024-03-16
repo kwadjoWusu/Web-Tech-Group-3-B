@@ -34,7 +34,7 @@ $UserName2 = $_SESSION['lname'];
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="admin.php">
               <i class="fas fa-home"></i>
               <span class="nav-item">Home</span>
             </a>
@@ -52,7 +52,7 @@ $UserName2 = $_SESSION['lname'];
             </a>
           </li>
           <li>
-            <a href="#" class="settings">
+            <a href="../g_view/home_forgotten_password.php" class="settings">
               <i class="fas fa-cog"></i>
               <span class="nav-item">Change Password</span>
             </a>
