@@ -66,7 +66,7 @@
         
         <section class="main-task">
           <h1>Consulation History</h1>
-          <?php include '../function/dash_appointment_function.php';?>
+          <?php include '../function/dash_appoinment_function.php';?>
         </section> 
       </section>
     </div>
