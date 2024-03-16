@@ -5,7 +5,7 @@ function getAllYears() {
     global $conn;
 
     // SELECT all years query
-    $query = "SELECT DISTINCT YEAR(appointment_date) AS appointment_year FROM appointments";
+    $query = "SELECT DISTINCT YEAR(appointment_date) AS appointment_year FROM appointment";
     $result = mysqli_query($conn, $query);
 
     // Check if execution worked
@@ -29,7 +29,7 @@ function getDashAllAppointments() {
     $appointments = [];
     foreach ($years as $year) {
         // Query to retrieve appointments for the current year
-        $query = "SELECT * FROM appointments WHERE YEAR(appointment_date) = $year";
+        $query = "SELECT * FROM appointment WHERE YEAR(appointment_date) = $year";
         $result = mysqli_query($conn, $query);
 
         // Check if execution worked
