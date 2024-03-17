@@ -73,7 +73,11 @@ $questions = getAllquestions();
             
         </div>
     </div>
-
+     <style>
+        option{
+            colour:black;
+        }
+    </style>
     <!-- <script src="../g_js/home_register_script.js"></script> -->
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
