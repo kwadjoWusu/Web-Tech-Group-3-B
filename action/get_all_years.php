@@ -21,7 +21,7 @@ function getAllYears() {
     return $years;
 }
 
-function getDashAllAppointments() {
+function getDashAllAppointments($userId) {
     global $conn;
 
     $years = getAllYears(); // Retrieve all years
@@ -29,7 +29,7 @@ function getDashAllAppointments() {
     $appointments = [];
     foreach ($years as $year) {
         // Query to retrieve appointments for the current year
-        $query = "SELECT * FROM appointment WHERE YEAR(appointment_date) = $year";
+        $query = "SELECT * FROM appointment WHERE YEAR(appointment_date) = $year AND UserID = $userId";
         $result = mysqli_query($conn, $query);
 
         // Check if execution worked
@@ -45,4 +45,6 @@ function getDashAllAppointments() {
 
     return $appointments;
 }
+
 ?>
+
