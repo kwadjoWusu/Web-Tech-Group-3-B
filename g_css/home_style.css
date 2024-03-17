@@ -40,12 +40,6 @@ body{
     margin: auto;
 }
 
-.icon{
-    width: 200px;
-    float: left;
-    height: 70px;
-}
-
 .logo{
     color: #64121f;
     font-size: 35px;
@@ -86,28 +80,6 @@ ul li a{
 
 ul li a:hover{
     color: #64121f;
-}
-
-.search{
-    width: 330px;
-    float: left;
-    margin-left: 270px;
-}
-
-.srch{
-    font-family: 'Times New Roman';
-    width: 200px;
-    height: 40px;
-    background: transparent;
-    border: 1px solid #64121f;
-    margin-top: 13px;
-    color: #fff;
-    border-right: none;
-    font-size: 16px;
-    float: left;
-    padding: 10px;
-    border-bottom-left-radius: 5px;
-    border-top-left-radius: 5px;
 }
 
 .btn{
@@ -190,7 +162,7 @@ ul li a:hover{
 
 .form{
     width: 250px;
-    height: 420px;
+    height: 340px;
     background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
     position: absolute;
     top: -20px;
@@ -208,7 +180,6 @@ ul li a:hover{
     font-size: 22px;
     background-color: #fff;
     border-radius: 10px;
-    margin: 2px;
     padding: 8px;
 }
 
@@ -267,11 +238,7 @@ ul li a:hover{
     text-decoration: none;
     color: #64121f;
 }
-.liw{
-    padding-top: 15px;
-    padding-bottom: 10px;
-    text-align: center;
-}
+
 .icons a{
     text-decoration: none;
     color: #fff;

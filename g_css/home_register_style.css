@@ -1,20 +1,20 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif; /* Setting default font family */
+    font-family: sans-serif; 
 }
 
 body{
     width: 110%;
     height: 100vh;
-    background-color: #fff; /* Changing background color */
+    background-color: #fff; 
 }
 
 .main {
     position: absolute;
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%);
+    transform: translate(-50%, -35%);
 }
 
 .pictures {
@@ -31,7 +31,7 @@ body{
     left: 0;
     width: 140%;
     height: 140%;
-    background: rgba(0, 0, 0, 0.5); /* Adjust the last value (0.5) for the desired transparency */
+    background: rgba(0, 0, 0, 0.5); 
 }
 
 
@@ -42,8 +42,9 @@ body{
     font-size: 22px;
     background-color: #fff;
     border-radius: 10px;
-    margin: 2px;
-    padding: 8px;
+    margin: 0;
+    padding-top: 10px;
+    vertical-align: middle;
 }
 
 
@@ -90,58 +91,31 @@ body{
     color: #64121f;
 }
 
-.liw {
-    padding-top: 15px;
-    padding-bottom: 10px;
-    text-align: center;
-    color:#fff;
-}
 
-.icons a {
-    text-decoration: none;
-    color: #fff;
-}
-
-.icons ion-icon {
-    color: #fff;
-    font-size: 30px;
-    padding-left: 10px;
-    padding-top: 5px;
-    transition: 0.3s ease;
-}
-
-.icons{
-    margin-left: 56%;
-    margin-top: -3%;
-}
-
-.icons ion-icon:hover {
-    color: #64121f;
-}
 
 .security-question {
-    color: #fff; /* Setting text color to white */
-    margin-top: 20px; /* Adjusting top margin */
-    font-size: 15px; /* Adjusting font size */
+    color: #fff;
+    margin-top: 20px; 
+    font-size: 15px;
     width: 100%;
+    font-family: 'Times New Roman', Times, serif;
 }
 
 .form {
-    width: 900px; /* Increase the width of the form */
+    width: 850px; 
     height: 800px;
-    margin: auto; /* Center the form */
-    
+    margin: auto; 
     background: linear-gradient(to top, rgba(0,0,0,0.8)50%,rgba(0,0,0,0.8)50%);
     border-radius: 10px;
     padding: 25px;
-    display: flex; /* Use flexbox for layout */
-    flex-wrap: wrap; /* Allow elements to wrap */
-    justify-content: space-between; /* Distribute items along the main axis */
+    display: flex; 
+    flex-wrap: wrap;
+    justify-content: space-between; 
 }
 
 .form input, .form select {
-    width: calc(50% - 20px); /* Set width for input fields */
-    height: 35px;
+    width: calc(50% - 20px); 
+    height: 30px;
     background: transparent;
     border-bottom: 1px solid #64121f;
     border-top: none;
@@ -154,25 +128,25 @@ body{
 }
 
 .form .gender {
-    width: 100%; /* Full width for gender */
+    width: 100%; 
     color: #fff;
     margin-top: 20px;
 }
 
 .form input[type="radio"] {
-    width: 100%; /* Full width for security questions and answers */
+    width: 100%; 
     margin-top: 20px;
 
 }
 
 .form .security-question,
 .form input[type="text"] {
-    width: 100%; /* Full width for security questions and answers */
+    width: 100%; 
     margin-top: 20px;
 }
 
 .form .security-question {
-    width: 100%; /* Full width for security questions */
+    width: 100%;
 }
 
 .form .major{

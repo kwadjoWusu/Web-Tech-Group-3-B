@@ -23,7 +23,7 @@
             </a>
           </li>
           <li>
-            <a href="#">
+            <a href="">
               <i class="fas fa-home"></i>
               <span class="nav-item">Home</span>
             </a>
@@ -41,9 +41,9 @@
             </a>
           </li>
           <li>
-            <a href="#" class="settings">
+            <a href="../g_view/setting.php" class="settings">
               <i class="fas fa-cog"></i>
-              <span class="nav-item">Change Password</span>
+              <span class="nav-item">Settings</span>
             </a>
           </li>
           <li>
@@ -66,7 +66,7 @@
         
         <section class="main-task">
           <h1>Consulation History</h1>
-          <?php include '../function/dash_appoinment_function.php';?>
+          <?php include '../function/dash_appointment_function.php';?>
         </section> 
       </section>
     </div>

@@ -18,7 +18,7 @@ document.addEventListener("DOMContentLoaded", function() {
             }
         };
     
-        xhr.open('POST', '../action/login_action.php'); 
+        xhr.open('POST', './action/login_action.php'); 
         xhr.send(formData); 
     }
 
