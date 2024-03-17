@@ -60,7 +60,12 @@ if ($roleID != 1) {
         <td><?= $st ?></td>
         <td>
             <button onclick="editAppointment(<?= $appointment['appointment_id'] ?>)">Edit</button>
-            <button onclick="deleteAppointment(<?= $appointment['appointment_id'] ?>)">Delete</button>
+            <?php
+               if ($roleID != 1) {
+               // Notice the proper concatenation and handling of PHP within the string
+               echo "<button onclick='deleteAppointment(" . $appointment['appointment_id'] . ")'>Delete</button>";
+               }
+               ?>
             <div class="status-dropdown">
         <button class="status-dropbtn">Change Status</button>
           <div class="status-dropdown-content">
