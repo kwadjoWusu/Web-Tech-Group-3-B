@@ -1,6 +1,15 @@
 <?php
 include '../action/get_all_years.php';
-$appointmentsByYear = getDashAllAppointments();
+
+
+if(!isset($_SESSION)){
+    session_start();
+}
+
+$UserID = $_SESSION['user_id'];
+//var_dump($_SESSION['user_id']);
+$appointmentsByYear = getDashAllAppointments($UserID);
+
 ?>
 <!DOCTYPE html>
 <html lang="en">
