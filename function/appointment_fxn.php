@@ -45,7 +45,7 @@ if ($roleID != 1) {
     </tr>
     <?php 
     
-    
+    if(is_array($appointments)&& !empty($appointments)){
     foreach ($appointments as $appointment):
           $k =$status[$appointment["status"]-1];
           $st = $k["status_name"];
@@ -73,7 +73,7 @@ if ($roleID != 1) {
     </div>
         </td>
     </tr>
-    <?php endforeach; ?>
+    <?php endforeach;} ?>
     
      
 </table>
