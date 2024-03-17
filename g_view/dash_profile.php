@@ -41,6 +41,12 @@
             </a>
           </li>
           <li>
+            <a href="../g_view/notification_page.php" >
+              <i class="fas fa-question-circle"></i>
+              <span class="nav-item">Notification</span>
+            </a>
+          </li>
+          <li>
             <a href="../g_view/setting.php" class="settings">
               <i class="fas fa-cog"></i>
               <span class="nav-item">Settings</span>

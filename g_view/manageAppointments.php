@@ -41,9 +41,9 @@
         </a>
       </li>
       <li>
-        <a href="../g_view/home_forgotten_password.php" class="settings">
+        <a href="../g_view/setting.php" class="settings">
           <i class="fas fa-cog"></i>
-          <span class="nav-item">Change Password</span>
+          <span class="nav-item">Settings</span>
         </a>
       </li>
       <li>

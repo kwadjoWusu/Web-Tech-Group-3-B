@@ -16,7 +16,7 @@
 
             <div class="menu">
                 <ul>
-                    <li><a href="">HOME</a></li>
+                    <li><a href="#">HOME</a></li>
                     <li><a href="../about.php">ABOUT</a></li>
                     <li><a href="../contact.php">CONTACT</a></li>
                 </ul>
@@ -32,21 +32,23 @@
                 <br>Get started today and experience the convenience of modern healthcare scheduling.</p>
 
 
-               <button class="cn"><a href="../g_view/home_register.php">JOIN US</a></button>
+                <a href="../g_view/home_register.php"><button class="cn">JOIN US</button></a>
 
-                <form class="form" id= "login-form">
+                <form class="form" action="../action/login_action.php" method="POST">
                     <h2>Login Here</h2>
                     <input type="email" name="email" placeholder="Enter Email Here">
                     <input type="password" name="password" placeholder="Enter Password Here">
-                    <button class="btnn" type="submit" >Login</button>
+                    <button type="submit" class="btnn">Login</button>
 
                     <p class="link">
                         <a href="../g_view/home_forgotten_password.php">Forgotten password </a></p>
 
                     <p class="link">Don't have an account<br>
-                    <a href="../g_view/home_register.php">Sign up </a> here </p>
-                    <div id ="message"></div>
+                    <a href="home_register.php">Sign up </a> here</a></p>
+
                 </form>
+                    </div>
+                </div>
         </div>
     </div>
     <script src= "../g_js/home_script.js"></script>

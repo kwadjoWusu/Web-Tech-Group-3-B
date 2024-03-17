@@ -6,7 +6,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Home</title>
-    <link rel="stylesheet" href="../g_css/dash_style.css" />
+    <link rel="stylesheet" href="../g_css/notification_page_style.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
@@ -41,7 +41,7 @@
             </a>
           </li>
           <li>
-            <a href="../g_view/notification_page.php" >
+            <a href="" >
               <i class="fas fa-question-circle"></i>
               <span class="nav-item">Notification</span>
             </a>
@@ -71,8 +71,22 @@
       <section class="main">
         
         <section class="main-task">
-          <h1>Consulation History</h1>
-          <?php include '../function/dash_appoinment_function.php';?>
+        <h1>Notifications</h1>
+                <div class="table-container">
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Notification ID</th>
+                                <th>Notification Type</th>
+                                <th>Message</th>
+                                <th>Timestamp</th>
+                            </tr>
+                        </thead>
+                        <tbody id="notificationTableBody">
+                            <!-- Table rows will be dynamically added here -->
+                        </tbody>
+                    </table>
+                </div>
         </section> 
       </section>
     </div>
